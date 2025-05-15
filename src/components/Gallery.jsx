@@ -17,8 +17,7 @@ const images = [
   '/Gallery/img1 (14).jpg',
   '/Gallery/img1 (15).jpg',
   '/Gallery/img1 (16).jpg',
-  '/Gallery/img1 (17).jpg',
-  // Agrega más rutas según necesites
+  '/Gallery/img1 (17).jpg', 
 ];
 
 export default function Gallery() {
