@@ -176,19 +176,19 @@ function App()
   <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
     <div className="space-y-4 text-gray-700">
       <div className="flex space-x-4 mt-6">
-      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-[#ec1763] hover:text-[#f37826] text-2xl flex items-center gap-2">
+      <a href="https://www.instagram.com/xacademyarts/" target="_blank" rel="noopener noreferrer" className="text-[#ec1763] hover:text-[#f37826] text-2xl flex items-center gap-2">
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.5a1 1 0 100 2 1 1 0 000-2z"/></svg>
         Instagram
       </a>
-      <a href="https://wa.me/584240001234" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-800 text-2xl flex items-center gap-2">
+      <a href="https://wa.me/8294513903" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-800 text-2xl flex items-center gap-2">
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 3.5A11.6 11.6 0 0012 .2C5.6.2.4 5.3.4 11.6c0 2 .5 4 1.5 5.8L0 24l6.7-1.7a11.4 11.4 0 005.7 1.5h.1c6.4 0 11.6-5.2 11.6-11.5 0-3.2-1.3-6.3-3.6-8.6zM12 21.3c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-4 .9.9-3.9-.2-.3A9.5 9.5 0 012.4 11.6c0-5.3 4.3-9.6 9.6-9.6 2.6 0 5 1 6.8 2.8s2.8 4.2 2.8 6.8c0 5.3-4.3 9.6-9.6 9.6z"/></svg>
         WhatsApp
       </a>
 
       </div>
-      <p>📍 Dirección: Calle Ficticia #123, Ciudad Creativa</p>
-      <p>📞 Teléfono: +58 424-000-1234</p>
-      <p>📧 Email: contacto@xacademy.com</p>
+      <p>📍 Dirección: Calle N No.7B, Sector Arroyo Hondo</p>
+      <p>📞 Teléfono: +1 (829) 451-3903</p>
+      <p>📧 Email: info@xacademy.com.do</p>
     </div><div className="w-full h-64 md:h-80 rounded-xl overflow-hidden shadow">
     <InteractiveMap />
       <iframe
