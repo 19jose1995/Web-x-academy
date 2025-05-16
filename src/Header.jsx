@@ -21,7 +21,7 @@ const Header = () => {
           href="#maestros"
           className="text-gray-700 hover:text-[#5568A9] hover:underline hover:scale-105 transition-all duration-200 inline-block"
         >
-          Maests
+          Maestros
         </a>
         <a
           href="#registro"

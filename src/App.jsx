@@ -96,10 +96,7 @@ function App()
         <h2 className="text-4xl font-bold text-center mb-12 text-[#5568af]">Clases y Horarios</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {[
-            {
-              name: 'Canto',
-              horarios: ['Viernes: 3:30–4:30 PM']
-            },
+            
             {
               name: 'Pre Ballet',
               horarios: ['Lun/Mié/Jue: 3:30–4:30 PM', 'Sábado: 9:30–11:30 AM']
