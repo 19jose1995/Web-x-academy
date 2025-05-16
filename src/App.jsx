@@ -61,7 +61,7 @@ function App()
       <section className="py-20 px-6 bg-gradient-to-br from-[#ceeaee] via-[#f8c9dd] to-[#cdd629]" data-aos="fade-up">
   <h2 className="text-4xl font-bold text-center mb-12">Conoce a Nuestros Maestros</h2>
   <div className="grid gap-10 md:grid-cols-3 max-w-6xl mx-auto">
-    <div className="relative bg-white rounded-2xl shadow-xl border-l-8 border-[#f37826] overflow-hidden hover:scale-105 transition">
+    {/*<div className="relative bg-white rounded-2xl shadow-xl border-l-8 border-[#f37826] overflow-hidden hover:scale-105 transition">
       <img src="/maestro1.jpg" alt="María López" className="w-full h-80 object-cover" />
       <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
         <div>
@@ -69,7 +69,7 @@ function App()
           <p className="text-white text-sm">Especialista en Música</p>
         </div>
       </div>
-    </div>
+    </div>*/}
     <div className="relative bg-white rounded-2xl shadow-xl border-l-8 border-[#ec1763] overflow-hidden hover:scale-105 transition">
       <img src="/Maestro3.jpg" alt="Isabel Minguez" className="w-full h-80 object-cover" />
       <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
@@ -79,7 +79,7 @@ function App()
         </div>
       </div>
     </div>
-    <div className="relative bg-white rounded-2xl shadow-xl border-l-8 border-[#5568A9] overflow-hidden hover:scale-105 transition">
+    {/*<div className="relative bg-white rounded-2xl shadow-xl border-l-8 border-[#5568A9] overflow-hidden hover:scale-105 transition">
       <img src="/maestro2.jpg" alt="Carlos Ruiz" className="w-full h-80 object-cover" />
       <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
         <div>
@@ -87,7 +87,7 @@ function App()
           <p className="text-white text-sm">Instructor de Pintura</p>
         </div>
       </div>
-    </div>
+    </div>*/}
   </div>
 </section>
 
