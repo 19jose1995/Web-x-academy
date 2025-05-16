@@ -5,7 +5,7 @@ import Gallery from './components/Gallery';
 import ScrollIndicator from './components/ScrollIndicator';
 import Header from './components/Header';
 import InteractiveMap from './components/InteractiveMap';
-
+import MaestrosDestacados from './components/MaestrosDestacados';
 
 
 function App()
@@ -44,54 +44,22 @@ function App()
         <h2 className="text-4xl font-bold text-center mb-12">Clases en X Academy</h2>
         <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
           <div className="relative bg-white p-8 pl-12 rounded-2xl shadow-lg border-l-8 border-[#ec1763] hover:scale-105 transition-transform" data-aos="zoom-in">
-  <h3 className="text-2xl font-semibold mb-2 text-[#ec1763]">Canto</h3>
-  <p>Desarrolla tu voz con técnicas vocales profesionales.</p>
-</div>
-          <div className="relative bg-white p-8 pl-12 rounded-2xl shadow-lg border-l-8 border-[#cdd629] hover:scale-105 transition-transform" data-aos="zoom-in">
-  <h3 className="text-2xl font-semibold mb-2 text-[#cdd629]">Danza</h3>
-  <p>Desde ballet hasta danza urbana, para todas las edades.</p>
-</div>
-          <div className="relative bg-white p-8 pl-12 rounded-2xl shadow-lg border-l-8 border-[#5568A9] hover:scale-105 transition-transform" data-aos="zoom-in">
-  <h3 className="text-2xl font-semibold mb-2 text-[#5568A9]">Teatro</h3>
-  <p>Explora la actuación, expresión corporal y escénica.</p>
-</div>
+            <h3 className="text-2xl font-semibold mb-2 text-[#ec1763]">Canto</h3>
+            <p>Desarrolla tu voz con técnicas vocales profesionales.</p>
+          </div>
+                    <div className="relative bg-white p-8 pl-12 rounded-2xl shadow-lg border-l-8 border-[#cdd629] hover:scale-105 transition-transform" data-aos="zoom-in">
+            <h3 className="text-2xl font-semibold mb-2 text-[#cdd629]">Danza</h3>
+            <p>Desde ballet hasta danza urbana, para todas las edades.</p>
+          </div>
+                    <div className="relative bg-white p-8 pl-12 rounded-2xl shadow-lg border-l-8 border-[#5568A9] hover:scale-105 transition-transform" data-aos="zoom-in">
+            <h3 className="text-2xl font-semibold mb-2 text-[#5568A9]">Teatro</h3>
+            <p>Explora la actuación, expresión corporal y escénica.</p>
+          </div>
         </div>
       </section>
       {/* Galería de Maestros Destacados */}
-      <section className="py-20 px-6 bg-gradient-to-br from-[#ceeaee] via-[#f8c9dd] to-[#cdd629]" data-aos="fade-up">
-  <h2 className="text-4xl font-bold text-center mb-12">Conoce a Nuestros Maestros</h2>
-  <div className="grid gap-10 md:grid-cols-3 max-w-6xl mx-auto">
-    <div className="relative bg-white rounded-2xl shadow-xl border-l-8 border-[#f37826] overflow-hidden hover:scale-105 transition">
-      <img src="/maestro1.jpg" alt="María López" className="w-full h-80 object-cover" />
-      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-        <div>
-          <h3 className="text-white text-2xl font-semibold">-</h3>
-          <p className="text-white text-sm">Especialista en Música</p>
-        </div>
-      </div>
-    </div>
-    <div className="relative bg-white rounded-2xl shadow-xl border-l-8 border-[#ec1763] overflow-hidden hover:scale-105 transition">
-      <img src="/Maestro3.jpg" alt="Isabel Minguez" className="w-full h-80 object-cover" />
-      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-        <div>
-          <h3 className="text-white text-2xl font-semibold">Isabel Minguez</h3>
-          <p className="text-white text-sm">Directora de danza</p>
-        </div>
-      </div>
-    </div>
-    <div className="relative bg-white rounded-2xl shadow-xl border-l-8 border-[#5568A9] overflow-hidden hover:scale-105 transition">
-      <img src="/maestro2.jpg" alt="Carlos Ruiz" className="w-full h-80 object-cover" />
-      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-        <div>
-          <h3 className="text-white text-2xl font-semibold">-</h3>
-          <p className="text-white text-sm">Instructor de Pintura</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-      {/* Calendario */}      
+      <MaestrosDestacados />     
+       {/* Calendario */}      
       <section className="py-20 px-6 bg-gradient-to-br from-[#ceeaee] via-[#f8c9dd] to-[#cdd629]" data-aos="fade-up">
         <h2 className="text-4xl font-bold text-center mb-12 text-[#5568af]">Clases y Horarios</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">

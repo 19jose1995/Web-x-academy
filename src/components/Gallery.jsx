@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+// src/components/Gallery.jsx
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectCoverflow } from 'swiper/modules';
 
-// Coloca tus imágenes en public/gallery/
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+
 const images = [
-  '/Gallery/img1.jpg',
+  '/Gallery/img1 (17).jpg',
   '/Gallery/img1 (2).jpg',
   '/Gallery/img1 (3).jpg',
   '/Gallery/img1 (5).jpg',
@@ -10,49 +15,49 @@ const images = [
   '/Gallery/img1 (7).jpg',
   '/Gallery/img1 (8).jpg',
   '/Gallery/img1 (9).jpg',
-  '/Gallery/img1 (10).jpg',
-  '/Gallery/img1 (11).jpg',
-  '/Gallery/img1 (12).jpg',
-  '/Gallery/img1 (13).jpg',
-  '/Gallery/img1 (14).jpg',
-  '/Gallery/img1 (15).jpg',
-  '/Gallery/img1 (16).jpg',
-  '/Gallery/img1 (17).jpg', 
 ];
 
 export default function Gallery() {
-  const [selected, setSelected] = useState(null);
-
   return (
-    <section id="galeria" className="py-20 px-6 bg-white" data-aos="fade-up">
-      <h2 className="text-4xl font-bold text-center mb-12">Galería</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
-        {images.map((src, idx) => (
-          <img
-            key={idx}
-            src={src}
-            alt={`Galería ${idx + 1}`}
-            className="object-cover w-full h-48 rounded-lg cursor-pointer hover:scale-105 transition-transform"
-            onClick={() => setSelected(idx)}
-          />
-        ))}
-      </div>
+    <section
+      id="galeria"
+      className="py-20 px-6 bg-gradient-to-br from-[#ceeaee] via-[#f8c9dd] to-[#cdd629]"
+      data-aos="fade-up"
+    >
+      <div className="max-w-screen-xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-12 text-[#000000]">
+          Galería
+        </h2>
 
-      {selected !== null && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-          <button
-            className="absolute top-4 right-4 text-white text-3xl font-bold"
-            onClick={() => setSelected(null)}
-          >
-            &times;
-          </button>
-          <img
-            src={images[selected]}
-            alt={`Galería ${selected + 1}`}
-            className="max-h-[90%] max-w-[90%] rounded-lg"
-          />
-        </div>
-      )}
+        <Swiper
+          modules={[Autoplay, EffectCoverflow]}
+          effect="coverflow"
+          grabCursor
+          centeredSlides
+          slidesPerView={4}
+          spaceBetween={0}
+          loop
+          autoplay={{ delay: 3500, disableOnInteraction: false }}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,    // sin espacio lateral
+            depth: 200,    // profundidad del efecto
+            modifier: 1.5, // intensidad del coverflow
+            slideShadows: false,
+          }}
+          className="overflow-visible"  /* permite que los laterales sobresalgan */
+        >
+          {images.map((src, idx) => (
+            <SwiperSlide key={idx} className="flex justify-center">
+              <img
+                src={src}
+                alt={`Galería ${idx + 1}`}
+                className="object-cover w-full max-w-md h-80 rounded-2xl shadow-lg"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </section>
   );
 }
