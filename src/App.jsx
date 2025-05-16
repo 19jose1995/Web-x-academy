@@ -75,7 +75,7 @@ function App()
       <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
         <div>
           <h3 className="text-white text-2xl font-semibold">Isabel Minguez</h3>
-          <p className="text-white text-sm">Profesora de Danza</p>
+          <p className="text-white text-sm">Directora de danza</p>
         </div>
       </div>
     </div>
