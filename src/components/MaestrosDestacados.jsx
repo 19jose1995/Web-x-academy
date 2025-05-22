@@ -9,7 +9,8 @@ export default function MaestrosDestacados() {
       role: 'Directora Artística',
       color: '#ec1763',
       resumen:
-        'Isabel Martínez es bailarina, coreógrafa, docente y gestora cultural con más de 20 años en la danza. Inició su formación a los 3 años y la formalizó graduándose de la Escuela Nacional de danza (ENDANZA) en el 2017. Hoy es directora y fundadora de X Academy y de la compañía Explicitus…',
+        'Isabel Martínez es bailarina, coreógrafa, docente y gestora cultural con más de 20 años en la danza. Inició su formación a los 3 años y la formalizó graduándose de la Escuela Nacional de danza (ENDANZA) en el 2017 y hoy es directora y fundadora de X Academy y de la compañía Explicitus, con la cual ha creado piezas reconocidas como Her Crown, Juanita y Work to Do, obra con la que ganó el primer lugar como coreógrafa en los Premios Clara Elena Ramírez y fue nominada a los Premios Soberano.'
+,
     },
     {
       src: '/Yngrid.jpg',
@@ -17,7 +18,7 @@ export default function MaestrosDestacados() {
       role: 'Hip Hop',
       color: '#ff1414',
       resumen:
-        'Yngrid es especialista en coreografías urbanas y baile callejero para todas las edades.',
+        'Yngrid Canela, Licenciada en Negocios Internacionales. Apasionada de las artes, coreografa, bailarina , Maestra y actriz. Desde los 13 años en los estudios de las artes. Ha sido Coreografa de espectáculos como premios heat y coreografiado conciertos y artistas Dominicanos . Actualmente es coreografa de la compañía de danza contemporánea Explicitus.',
     },    
     {
       src: '/Cristian.jpg',
@@ -33,7 +34,7 @@ export default function MaestrosDestacados() {
       role: 'Movimiento creativo & Pre ballet',
       color: '#5568A9',
       resumen:
-        'Alba Isaura es bailarina dominicana, graduada en Bachillerato Técnico en Artes (mención Danza) en 2024. Forma parte de la compañía Explicitus…',
+        'Alba Isaura es una joven bailarina dominicana, graduada en 2024 del Bachillerato Técnico en Artes, mención Danza. Actualmente forma parte de la compañía de danza contemporánea Explicitus, donde se ha destacado como intérprete en piezas de repertorio contemporáneo. Su formación técnica ha sido guiada por maestros como Isabel Martínez, Cristian Hazin, Doris Infante y su paso por el Ballet Teatro Dominicano. Se especializa en danza clásica y contemporánea, y también se desempeña como docente, enfocada en el desarrollo técnico y creativo de sus estudiantes.',
     },
     {
       src: '/Paola.jpeg',
@@ -41,7 +42,7 @@ export default function MaestrosDestacados() {
       role: 'Canto',
       color: '#f37826',
       resumen:
-        'Paola Prado es cantante, vocal coach, maquilladora, directora coral y docente especializada en teatro musical…',
+        'Paola Prado es cantante, vocal coach, maquilladora, directora coral y docente especializada en teatro musical. Estudia Licenciatura en Música Contemporánea en la UNPHU y cuenta con formación en canto lírico y dirección coral en Venezuela, incluyendo el Conservatorio Simón Bolívar y el Sistema Nacional de Coros. Es fundadora del Estudio Musical Paola Prado y profesora de canto e interpretación en la Academia Amaury Sánchez desde 2018. Ha sido directora coral en diversos proyectos en Venezuela y República Dominicana, y ha participado como soprano en prestigiosas agrupaciones como Koribe y el Coral Nacional Simón Bolívar. En teatro musical, ha trabajado en dirección vocal y producción de obras como In The Heights, Rock of Ages, Hairspray y En el Bosque, además de actuar en montajes como La Jaula de las Locas y La Casa de Bernarda Alba. Su trayectoria combina excelencia artística con una sólida vocación docente.',
     },
   ];
 

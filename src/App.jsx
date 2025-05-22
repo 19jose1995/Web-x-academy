@@ -6,7 +6,7 @@ import ScrollIndicator from './components/ScrollIndicator';
 import Header from './components/Header';
 import InteractiveMap from './components/InteractiveMap';
 import MaestrosDestacados from './components/MaestrosDestacados';
-
+import ConfettiButton from './components/ConfettiButton';
 
 function App()
  {
@@ -27,7 +27,7 @@ function App()
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center text-center py-28 px-6 bg-gradient-to-br from-[#ceeaee] via-[#f8c9dd] to-[#cdd629]" data-aos="fade-up">
         <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-          Descubre tu talento<br />en <span className="text-[#ffffff]">X Academy</span>
+          Descubre tu talento<br />en <span className="text-[#5568A9]">X Academy</span>
         </h1>
         <p className="text-xl md:text-2xl mb-8 text-gray-700 max-w-2xl">
           Una academia de artes donde el canto, el teatro y la danza se convierten en experiencias inolvidables.
@@ -114,30 +114,80 @@ function App()
       </section>
       <Gallery/>
             <section id="registro" className="py-20 px-6 bg-[#ceeaee]" data-aos="fade-up">
-              <h2 className="text-4xl font-bold text-center mb-12">Formulario de Registro</h2>
-              <form className="max-w-3xl mx-auto grid gap-6 md:grid-cols-2">
-                <input type="text" placeholder="Nombre completo" className="p-4 rounded-xl border border-gray-300" />
-                <input type="text" placeholder="Fecha de nacimiento" className="p-4 rounded-xl border border-gray-300" />
-                <input type="text" placeholder="Nombre tutor legal" className="p-4 rounded-xl border border-gray-300" />
-                <input type="text" placeholder="Areas de interes" className="p-4 rounded-xl border border-gray-300" />
-                <input type="email" placeholder="Correo electrónico" className="p-4 rounded-xl border border-gray-300" />
-                <input type="tel" placeholder="Teléfono" className="p-4 rounded-xl border border-gray-300" />
-                <select className="p-4 rounded-xl border border-gray-300">
-                  <option>Selecciona una clase</option>
-                  <option>Pre Ballet</option>
-                  <option>Movimiento Creativo</option>
-                  <option>Ballet 1</option>
-                  <option>Ballet adultos</option>
-                  <option>Danza Contemporanea</option>
-                  <option>Teatro</option>
-                  <option>Canto</option>
-                  <option>Jazz Kids</option>
-                  <option>Danza Contemporanea 3</option>
-                  <option>Hip Hop Teens</option>
-                </select>
-                <button className="col-span-full bg-[#f37826] text-white py-3 rounded-xl hover:bg-[#ec1763] transition">Enviar</button>
-              </form>
-            </section>
+  <h2 className="text-4xl font-bold text-center mb-12">Formulario de Registro</h2>
+  <form
+    action="/send_email.php"
+    method="POST"
+    className="max-w-3xl mx-auto grid gap-6 md:grid-cols-2"
+  >
+    <input
+      name="name"
+      type="text"
+      placeholder="Nombre completo"
+      className="p-4 rounded-xl border border-gray-300"
+      required
+    />
+    <input
+      name="birthday"
+      type="text"
+      placeholder="Fecha de nacimiento"
+      className="p-4 rounded-xl border border-gray-300"
+      required
+    />
+    <input
+      name="guardian"
+      type="text"
+      placeholder="Nombre tutor legal"
+      className="p-4 rounded-xl border border-gray-300"
+      required
+    />
+    <input
+      name="interest"
+      type="text"
+      placeholder="Áreas de interés"
+      className="p-4 rounded-xl border border-gray-300"
+      required
+    />
+    <input
+      name="email"
+      type="email"
+      placeholder="Correo electrónico"
+      className="p-4 rounded-xl border border-gray-300"
+      required
+    />
+    <input
+      name="phone"
+      type="tel"
+      placeholder="Teléfono"
+      className="p-4 rounded-xl border border-gray-300"
+      required
+    />
+    <select
+      name="class"
+      className="p-4 rounded-xl border border-gray-300"
+      required
+    >
+      <option value="">Selecciona una clase</option>
+      <option>Pre Ballet</option>
+      <option>Movimiento Creativo</option>
+      <option>Ballet 1</option>
+      <option>Ballet adultos</option>
+      <option>Danza Contemporanea</option>
+      <option>Teatro</option>
+      <option>Canto</option>
+      <option>Jazz Kids</option>
+      <option>Danza Contemporanea 3</option>
+      <option>Hip Hop Teens</option>
+    </select>
+    <ConfettiButton
+      type="submit"
+      className="col-span-full bg-[#f37826] text-white hover:bg-[#ec1763]/90"
+    >
+      Enviar
+    </ConfettiButton>
+  </form>
+</section>
+
           
       <section id="contacto" className="py-20 px-6 bg-[#fff4f0]" data-aos="fade-up">
   <h2 className="text-4xl font-bold text-center mb-12">Contáctanos</h2>

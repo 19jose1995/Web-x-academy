@@ -26,7 +26,7 @@ export default function Header() {
         </motion.div>
 
         {/* Navegación */}
-        <nav className="flex space-x-4">
+        <nav className="flex items-center space-x-4">
           {navItems.map((item) => (
             <motion.a
               key={item.label}
@@ -38,6 +38,23 @@ export default function Header() {
               {item.label}
             </motion.a>
           ))}
+          {/* WhatsApp Button */}
+           <motion.a
+          href="https://wa.me/8294513903"
+        target="_blank"
+        rel="noopener noreferrer"
+          className="flex items-center space-x-2 px-4 py-2 rounded-full text-base font-medium bg-green-600 text-white hover:bg-green-600 transition"
+          whileHover={{ scale: 1.05 }}
+         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+       >
+         {/* Icono de WhatsApp en PNG */}
+          <img
+            src="/whatsapp.png"
+          alt="WhatsApp icon"
+           className="w-5 h-5 object-contain"
+         />
+         <span>WhatsApp</span>       
+         </motion.a>
         </nav>
       </div>
     </header>
