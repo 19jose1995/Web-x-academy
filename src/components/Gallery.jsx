@@ -25,7 +25,7 @@ export default function Gallery() {
       data-aos="fade-up"
     >
       <div className="max-w-screen-xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 text-[#000000]">
+        <h2 className="text-4xl font-bold text-center mb-12 text-[#5568af]">
           Galería
         </h2>
 
@@ -34,25 +34,45 @@ export default function Gallery() {
           effect="coverflow"
           grabCursor
           centeredSlides
-          slidesPerView={4}
-          spaceBetween={0}
           loop
           autoplay={{ delay: 3500, disableOnInteraction: false }}
           coverflowEffect={{
             rotate: 0,
-            stretch: 0,    // sin espacio lateral
-            depth: 200,    // profundidad del efecto
-            modifier: 1.5, // intensidad del coverflow
+            stretch: 0,
+            depth: 200,
+            modifier: 1.5,
             slideShadows: false,
           }}
-          className="overflow-visible"  /* permite que los laterales sobresalgan */
+          className="overflow-visible"
+          breakpoints={{
+            // < 640px: 1.2 slides, un poco de peek, menos separación
+            0: {
+              slidesPerView: 1.2,
+              spaceBetween: -20,
+            },
+            // ≥640px: 2 slides, espacio ajustado
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            // ≥768px: 3 slides
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            // ≥1024px: 4 slides
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 0,
+            },
+          }}
         >
           {images.map((src, idx) => (
             <SwiperSlide key={idx} className="flex justify-center">
               <img
                 src={src}
                 alt={`Galería ${idx + 1}`}
-                className="object-cover w-full max-w-md h-80 rounded-2xl shadow-lg"
+                className="object-cover w-full max-w-xs sm:max-w-sm md:max-w-md h-64 sm:h-80 rounded-2xl shadow-lg"
               />
             </SwiperSlide>
           ))}

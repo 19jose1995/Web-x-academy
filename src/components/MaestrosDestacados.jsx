@@ -1,4 +1,3 @@
-// src/components/MaestrosDestacados.jsx
 import { useState } from 'react';
 
 export default function MaestrosDestacados() {
@@ -9,23 +8,47 @@ export default function MaestrosDestacados() {
       role: 'Directora Artística',
       color: '#ec1763',
       resumen:
-        'Isabel Martínez es bailarina, coreógrafa, docente y gestora cultural con más de 20 años en la danza. Inició su formación a los 3 años y la formalizó graduándose de la Escuela Nacional de danza (ENDANZA) en el 2017. Hoy es directora y fundadora de X Academy y de la compañía Explicitus…',
+        'Isabel Martínez es bailarina, coreógrafa, docente y gestora cultural con más de 20 años en la danza. Inició su formación a los 3 años y la formalizó graduándose de la Escuela Nacional de danza (ENDANZA) en el 2017 y hoy es directora y fundadora de X Academy y de la compañía Explicitus, con la cual ha creado piezas reconocidas como Her Crown, Juanita y Work to Do, obra con la que ganó el primer lugar como coreógrafa en los Premios Clara Elena Ramírez y fue nominada a los Premios Soberano.',
     },
     {
       src: '/Yngrid.jpg',
       name: 'Yngrid Canela',
       role: 'Hip Hop',
+      color: '#ceeaee',
+      resumen:
+        'Yngrid Canela, Licenciada en Negocios Internacionales. Apasionada de las artes, coreografa, bailarina , Maestra y actriz. Desde los 13 años en los estudios de las artes. Ha sido Coreografa de espectáculos como premios heat y coreografiado conciertos y artistas Dominicanos . Actualmente es coreografa de la compañía de danza contemporánea Explicitus.',
+    },  
+    {
+      src: '/Melody.jpg',
+      name: 'Melody Santelises',
+      role: 'Heels',
       color: '#ff1414',
       resumen:
-        'Yngrid es especialista en coreografías urbanas y baile callejero para todas las edades.',
+        'Melody Ysatis Santelises Graciano es una bailarina, actriz, cantante y gimnasta dominicana. Inició su formación a los 6 años en el Articentro de Danza Miriam Bello, y más adelante obtuvo una beca en la Escuela Nacional de Danza, donde se graduó tras 10 años en la mención Contemporáneo-Folklore. Es Licenciada en Interpretación y Coreografía de la Danza por la Universidad Rey Juan Carlos en Madrid, en colaboración con el Instituto Alicia Alonso. Ha ampliado su formación en centros internacionales como Broadway Dance Center (NYC) y Show Stopper (Miami), y representó al grupo español TKN en la competencia mundial Hip Hop International. Ha participado como bailarina y coreógrafa en eventos como Premios Soberano, Premios Heat, musicales, EDANCO y el Hard Rock Music Festival. Actualmente, forma parte de la Compañía de Danza Explicitus y de DNI dirigida por Víctor Osvaldo Heredia.',
     },    
+    {
+      src: '/Sofia.jpg',
+      name: 'Sofia Martinez',
+      role: 'Movimiento creativo',
+      color: '#ff1414',
+      resumen:
+        'Sofía Martínez es egresada de la Escuela Nacional de Danza (END) en la mención Clásico-Contemporáneo. A lo largo de su formación y carrera, ha desarrollado una técnica sólida y una fuerte presencia escénica que la han llevado a destacarse en múltiples escenarios del país.Actualmente forma parte del Ballet Concierto Dominicano de la Compañía Explicitus, con la cual ha participado en diversas temporadas artísticas y montajes de alto nivel. Entre sus interpretaciones más destacadas se encuentran las obras Carmen y Juanita: La historia detrás del gran viaje, así como otras piezas del repertorio de la compañía.',
+    },
     {
       src: '/Cristian.jpg',
       name: 'Cristian Hazin',
       role: 'Danza contemporánea',
       color: '#cdd629',
       resumen:
-        'Cristian Hazin es bailarín y coreógrafo de danza contemporánea, con amplia experiencia en compañías nacionales e internacionales…',
+        'Cristian Omar Hazin Garrido, Bailarín profesional, coreógrafo y maestro. Inició su formación en Balleteatro Dominicano, años después ingresó al Conservatorio Nacional de Danza, llegando a formar parte de la compañía juvenil.Licenciado en Coreografía e Interpretación de la Danza por el Instituto de Danza Alicia Alonso en la Universidad Rey Juan Carlos, Madrid, España. Coreógrafo de la compañía de danza Explicitus desde el 2023.',
+    },
+    {
+      src: '/Genesis.jpg',
+      name: 'Genesis Brito',
+      role: 'Teatro Musical',
+      color: '#5568A9',
+      resumen:
+        'Génesis Brito es actriz y bailarina, y actualmente se desempeña como bailarina principal de la compañía de danza contemporánea Explicitus. Comenzó su formación a los 10 años con Doris Infante, luego continuó en la escuela María Trinidad Sánchez con la profesora María Cristina, y más adelante en la escuela de ballet Venus con docentes como Arianna Roblejo. Su primer acercamiento a la danza contemporánea fue en Ballet Concierto Dominicano con la profesora Alicia Campillo. Es egresada de la Academia de Formación Artística (AFA) y tiene una Licenciatura en Teatro, mención Actuación, en la UASD.',
     },
     {
       src: '/Isaura.jpg',
@@ -33,7 +56,7 @@ export default function MaestrosDestacados() {
       role: 'Movimiento creativo & Pre ballet',
       color: '#5568A9',
       resumen:
-        'Alba Isaura es bailarina dominicana, graduada en Bachillerato Técnico en Artes (mención Danza) en 2024. Forma parte de la compañía Explicitus…',
+        'Alba Isaura es una joven bailarina dominicana, graduada en 2024 del Bachillerato Técnico en Artes, mención Danza. Actualmente forma parte de la compañía de danza contemporánea Explicitus, donde se ha destacado como intérprete en piezas de repertorio contemporáneo. Su formación técnica ha sido guiada por maestros como Isabel Martínez, Cristian Hazin, Doris Infante y su paso por el Ballet Teatro Dominicano. Se especializa en danza clásica y contemporánea, y también se desempeña como docente, enfocada en el desarrollo técnico y creativo de sus estudiantes.',
     },
     {
       src: '/Paola.jpeg',
@@ -41,7 +64,7 @@ export default function MaestrosDestacados() {
       role: 'Canto',
       color: '#f37826',
       resumen:
-        'Paola Prado es cantante, vocal coach, maquilladora, directora coral y docente especializada en teatro musical…',
+        'Paola Prado es cantante, vocal coach, maquilladora, directora coral y docente especializada en teatro musical. Estudia Licenciatura en Música Contemporánea en la UNPHU y cuenta con formación en canto lírico y dirección coral en Venezuela, incluyendo el Conservatorio Simón Bolívar y el Sistema Nacional de Coros. Es fundadora del Estudio Musical Paola Prado y profesora de canto e interpretación en la Academia Amaury Sánchez desde 2018. Ha sido directora coral en diversos proyectos en Venezuela y República Dominicana, y ha participado como soprano en prestigiosas agrupaciones como Koribe y el Coral Nacional Simón Bolívar. En teatro musical, ha trabajado en dirección vocal y producción de obras como In The Heights, Rock of Ages, Hairspray y En el Bosque, además de actuar en montajes como La Jaula de las Locas y La Casa de Bernarda Alba. Su trayectoria combina excelencia artística con una sólida vocación docente.',
     },
   ];
 
@@ -64,9 +87,10 @@ export default function MaestrosDestacados() {
           Conoce a Nuestros Maestros
         </h2>
 
+        {/* Primer bloque: primeros 4 maestros */}
         <div
           className="
-            grid gap-4
+            grid gap-10
             grid-cols-1
             sm:grid-cols-2
             md:grid-cols-[repeat(auto-fit,minmax(200px,1fr))]
@@ -74,7 +98,42 @@ export default function MaestrosDestacados() {
             mx-auto
           "
         >
-          {maestros.map((m) => (
+          {maestros.slice(0, 4).map((m) => (
+            <div
+              key={m.name}
+              onClick={() => handleClick(m)}
+              className="relative bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-95 transition-transform cursor-pointer"
+              style={{ borderLeftWidth: '4px', borderLeftColor: m.color }}
+            >
+              <img
+                src={m.src}
+                alt={m.name}
+                className="w-full h-60 object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                <div>
+                  <h3 className="text-white text-2xl font-semibold">
+                    {m.name}
+                  </h3>
+                  <p className="text-white text-sm">{m.role}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Segundo bloque: siguientes 4 maestros */}
+        <div
+          className="
+            grid gap-10 mt-12
+            grid-cols-1
+            sm:grid-cols-2
+            md:grid-cols-[repeat(auto-fit,minmax(200px,1fr))]
+            max-w-screen-xl
+            mx-auto
+          "
+        >
+          {maestros.slice(4).map((m) => (
             <div
               key={m.name}
               onClick={() => handleClick(m)}
@@ -99,6 +158,7 @@ export default function MaestrosDestacados() {
         </div>
       </section>
 
+      {/* Modal */}
       {open && seleccionado && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
