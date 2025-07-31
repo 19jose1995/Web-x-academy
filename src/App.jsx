@@ -6,31 +6,11 @@ import ScrollIndicator from './components/ScrollIndicator';
 import Header from './components/Header';
 import InteractiveMap from './components/InteractiveMap';
 import MaestrosDestacados from './components/MaestrosDestacados';
-import ConfettiButton from './components/ConfettiButton';
-import PackagesSection from './components/PackagesSection';
-import Logo from './assets/Logo.png';
-import RegistrationForm from './components/RegistrationForm';
-
-// Modal genérico para confirmación
-const Modal = ({ isOpen, onClose, onConfirm, option }) => {
-  if (!isOpen) return null;
-  return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-6 max-w-sm w-full">
-        <p className="mb-4">
-          ¿Deseas inscribirte en <strong>{option}</strong>?
-        </p>
-        <div className="flex justify-end space-x-2">
-          <button onClick={onClose} className="px-4 py-2">Cancelar</button>          
-          <button onClick={onConfirm} className="px-4 py-2 bg-gradient-to-r from-[#f37826] to-[#ec1763] text-white rounded">Sí</button>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 
-export default function App() {
+function App()
+ {
+  
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -81,14 +61,9 @@ const lng = -69.94082110538326;
       <Header />      
 
       {/* Hero Section */}
-      <section
-        className="flex flex-col items-center justify-center text-center py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#ceeaee] via-[#f8c9dd] to-[#cdd629]"
-        data-aos="fade-up"
-      >
-        <img src={Logo} alt="X Academy Logo" className="w-32 sm:w-40 md:w-56 lg:w-72 mb-6" />
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
-          Descubre tu talento<br />
-          <span className="text-[#5568A9]">en X Academy</span>
+      <section className="flex flex-col items-center justify-center text-center py-28 px-6 bg-gradient-to-br from-[#ceeaee] via-[#f8c9dd] to-[#cdd629]" data-aos="fade-up">
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+          Descubre tu talento<br />en <span className="text-[#ffffff]">X Academy</span>
         </h1>
         <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 max-w-2xl text-gray-700">
           Una academia de artes donde el canto, el teatro y la danza se convierten en experiencias inolvidables.
@@ -155,22 +130,33 @@ const lng = -69.94082110538326;
           })}
         </div>
       </section>
-
-      {/* Confirmación Modal */}
-      <Modal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onConfirm={handleConfirm}
-        option={selectedOption}
-      />
-
-      <Gallery />
-
-      <div ref={formRef}>
-        <RegistrationForm initialSelection={selectedOption} />
-      </div>
-
-      {/* Contacto y Footer */}
+      <Gallery/>
+            <section id="registro" className="py-20 px-6 bg-[#ceeaee]" data-aos="fade-up">
+              <h2 className="text-4xl font-bold text-center mb-12">Formulario de Registro</h2>
+              <form className="max-w-3xl mx-auto grid gap-6 md:grid-cols-2">
+                <input type="text" placeholder="Nombre completo" className="p-4 rounded-xl border border-gray-300" />
+                <input type="text" placeholder="Fecha de nacimiento" className="p-4 rounded-xl border border-gray-300" />
+                <input type="text" placeholder="Nombre tutor legal" className="p-4 rounded-xl border border-gray-300" />
+                <input type="text" placeholder="Areas de interes" className="p-4 rounded-xl border border-gray-300" />
+                <input type="email" placeholder="Correo electrónico" className="p-4 rounded-xl border border-gray-300" />
+                <input type="tel" placeholder="Teléfono" className="p-4 rounded-xl border border-gray-300" />
+                <select className="p-4 rounded-xl border border-gray-300">
+                  <option>Selecciona una clase</option>
+                  <option>Pre Ballet</option>
+                  <option>Movimiento Creativo</option>
+                  <option>Ballet 1</option>
+                  <option>Ballet adultos</option>
+                  <option>Danza Contemporanea</option>
+                  <option>Teatro</option>
+                  <option>Canto</option>
+                  <option>Jazz Kids</option>
+                  <option>Danza Contemporanea 3</option>
+                  <option>Hip Hop Teens</option>
+                </select>
+                <button className="col-span-full bg-[#f37826] text-white py-3 rounded-xl hover:bg-[#ec1763] transition">Enviar</button>
+              </form>
+            </section>
+          
       <section id="contacto" className="py-20 px-6 bg-[#fff4f0]" data-aos="fade-up">
         <h2 className="text-4xl font-bold text-center text-[#5568af] mb-12">Contáctanos</h2>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">

@@ -8,7 +8,12 @@ export default function MaestrosDestacados() {
       role: 'Directora Artística',
       color: '#ec1763',
       resumen:
+<<<<<<< HEAD
         'Isabel Martínez es bailarina, coreógrafa, docente y gestora cultural con más de 20 años en la danza. Inició su formación a los 3 años y la formalizó graduándose de la Escuela Nacional de danza (ENDANZA) en el 2017 y hoy es directora y fundadora de X Academy y de la compañía Explicitus, con la cual ha creado piezas reconocidas como Her Crown, Juanita y Work to Do, obra con la que ganó el primer lugar como coreógrafa en los Premios Clara Elena Ramírez y fue nominada a los Premios Soberano.',
+=======
+        'Isabel Martínez es bailarina, coreógrafa, docente y gestora cultural con más de 20 años en la danza. Inició su formación a los 3 años y la formalizó graduándose de la Escuela Nacional de danza (ENDANZA) en el 2017 y hoy es directora y fundadora de X Academy y de la compañía Explicitus, con la cual ha creado piezas reconocidas como Her Crown, Juanita y Work to Do, obra con la que ganó el primer lugar como coreógrafa en los Premios Clara Elena Ramírez y fue nominada a los Premios Soberano.'
+,
+>>>>>>> e35b3d432a8050c4433dec60043ef7c793c83c4f
     },
     {
       src: '/Yngrid.jpg',
@@ -24,7 +29,11 @@ export default function MaestrosDestacados() {
       role: 'Heels',
       color: '#ff1414',
       resumen:
+<<<<<<< HEAD
         'Melody Ysatis Santelises Graciano es una bailarina, actriz, cantante y gimnasta dominicana. Inició su formación a los 6 años en el Articentro de Danza Miriam Bello, y más adelante obtuvo una beca en la Escuela Nacional de Danza, donde se graduó tras 10 años en la mención Contemporáneo-Folklore. Es Licenciada en Interpretación y Coreografía de la Danza por la Universidad Rey Juan Carlos en Madrid, en colaboración con el Instituto Alicia Alonso. Ha ampliado su formación en centros internacionales como Broadway Dance Center (NYC) y Show Stopper (Miami), y representó al grupo español TKN en la competencia mundial Hip Hop International. Ha participado como bailarina y coreógrafa en eventos como Premios Soberano, Premios Heat, musicales, EDANCO y el Hard Rock Music Festival. Actualmente, forma parte de la Compañía de Danza Explicitus y de DNI dirigida por Víctor Osvaldo Heredia.',
+=======
+        'Yngrid Canela, Licenciada en Negocios Internacionales. Apasionada de las artes, coreografa, bailarina , Maestra y actriz. Desde los 13 años en los estudios de las artes. Ha sido Coreografa de espectáculos como premios heat y coreografiado conciertos y artistas Dominicanos . Actualmente es coreografa de la compañía de danza contemporánea Explicitus.',
+>>>>>>> e35b3d432a8050c4433dec60043ef7c793c83c4f
     },    
     {
       src: '/Sofia.jpg',
@@ -56,7 +65,11 @@ export default function MaestrosDestacados() {
       role: 'Movimiento creativo & Pre ballet',
       color: '#5568A9',
       resumen:
+<<<<<<< HEAD
         'Alba Isaura es una joven bailarina dominicana, graduada en 2024 del Bachillerato Técnico en Artes, mención Danza. Actualmente forma parte de la compañía de danza contemporánea Explicitus, donde se ha destacado como intérprete en piezas de repertorio contemporáneo. Su formación técnica ha sido guiada por maestros como Isabel Martínez, Cristian Hazin, Doris Infante y su paso por el Ballet Teatro Dominicano. Se especializa en danza clásica y contemporánea, y también se desempeña como docente, enfocada en el desarrollo técnico y creativo de sus estudiantes.',
+=======
+        'Alba Isaura es una joven bailarina dominicana, graduada en 2024 del Bachillerato Técnico en Artes, mención Danza. Actualmente forma parte de la compañía de danza contemporánea Explicitus, donde se ha destacado como intérprete en piezas de repertorio contemporáneo. Su formación técnica ha sido guiada por maestros como Isabel Martínez, Cristian Hazin, Doris Infante y su paso por el Ballet Teatro Dominicano. Se especializa en danza clásica y contemporánea, y también se desempeña como docente, enfocada en el desarrollo técnico y creativo de sus estudiantes.',
+>>>>>>> e35b3d432a8050c4433dec60043ef7c793c83c4f
     },
     {
       src: '/Paola.jpeg',
@@ -64,7 +77,11 @@ export default function MaestrosDestacados() {
       role: 'Canto',
       color: '#f37826',
       resumen:
+<<<<<<< HEAD
         'Paola Prado es cantante, vocal coach, maquilladora, directora coral y docente especializada en teatro musical. Estudia Licenciatura en Música Contemporánea en la UNPHU y cuenta con formación en canto lírico y dirección coral en Venezuela, incluyendo el Conservatorio Simón Bolívar y el Sistema Nacional de Coros. Es fundadora del Estudio Musical Paola Prado y profesora de canto e interpretación en la Academia Amaury Sánchez desde 2018. Ha sido directora coral en diversos proyectos en Venezuela y República Dominicana, y ha participado como soprano en prestigiosas agrupaciones como Koribe y el Coral Nacional Simón Bolívar. En teatro musical, ha trabajado en dirección vocal y producción de obras como In The Heights, Rock of Ages, Hairspray y En el Bosque, además de actuar en montajes como La Jaula de las Locas y La Casa de Bernarda Alba. Su trayectoria combina excelencia artística con una sólida vocación docente.',
+=======
+        'Paola Prado es cantante, vocal coach, maquilladora, directora coral y docente especializada en teatro musical. Estudia Licenciatura en Música Contemporánea en la UNPHU y cuenta con formación en canto lírico y dirección coral en Venezuela, incluyendo el Conservatorio Simón Bolívar y el Sistema Nacional de Coros. Es fundadora del Estudio Musical Paola Prado y profesora de canto e interpretación en la Academia Amaury Sánchez desde 2018. Ha sido directora coral en diversos proyectos en Venezuela y República Dominicana, y ha participado como soprano en prestigiosas agrupaciones como Koribe y el Coral Nacional Simón Bolívar. En teatro musical, ha trabajado en dirección vocal y producción de obras como In The Heights, Rock of Ages, Hairspray y En el Bosque, además de actuar en montajes como La Jaula de las Locas y La Casa de Bernarda Alba. Su trayectoria combina excelencia artística con una sólida vocación docente.',
+>>>>>>> e35b3d432a8050c4433dec60043ef7c793c83c4f
     },
   ];
 
