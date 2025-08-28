@@ -5,6 +5,10 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef();
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f2c1bc4359427c9cc7a8814f981361a9fad3402d
   const items = [
     { label: 'Clases',   href: '#horarios',    internal: true },
     { label: 'Maestros', href: '#maestros',  internal: true },
@@ -114,6 +118,7 @@ export default function Header() {
             )}
           </div>
         )}
+<<<<<<< HEAD
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
@@ -129,6 +134,9 @@ export default function Header() {
           />
         </motion.div>
 
+=======
+=======
+>>>>>>> f2c1bc4359427c9cc7a8814f981361a9fad3402d
         {/* Navegación */}
         <nav className="flex items-center space-x-4">
           {navItems.map((item) => (
@@ -160,6 +168,10 @@ export default function Header() {
          <span>WhatsApp</span>       
          </motion.a>
         </nav>
+<<<<<<< HEAD
+=======
+>>>>>>> e35b3d432a8050c4433dec60043ef7c793c83c4f
+>>>>>>> f2c1bc4359427c9cc7a8814f981361a9fad3402d
       </div>
     </header>
   );
