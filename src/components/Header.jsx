@@ -1,83 +1,81 @@
 // src/components/Header.jsx
 import React, { useState, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef();
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f2c1bc4359427c9cc7a8814f981361a9fad3402d
   const items = [
-    { label: 'Clases',   href: '#horarios',    internal: true },
+    { label: 'Clases',   href: '#horarios',  internal: true },
     { label: 'Maestros', href: '#maestros',  internal: true },
     { label: 'Registro', href: '#registro',  internal: true },
     { label: 'WhatsApp', href: 'https://wa.me/8294513903', internal: false },
   ];
 
-  // cierra menu al hacer clic fuera
+  // Cierra menú al hacer clic fuera
   useEffect(() => {
     const onClickOutside = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
-        setOpen(false);
-      }
+      if (menuRef.current && !menuRef.current.contains(e.target)) setOpen(false);
     };
     document.addEventListener('mousedown', onClickOutside);
     return () => document.removeEventListener('mousedown', onClickOutside);
   }, []);
 
   const handleClick = (href, internal) => (e) => {
-    if (internal) {
-      e.preventDefault();
-      setOpen(false);
-      const headerH = document.querySelector('header')?.getBoundingClientRect().height || 0;
-      const target = document.querySelector(href);
-      if (target) {
-        const top = target.getBoundingClientRect().top + window.pageYOffset - headerH;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
+    if (!internal) return; // enlaces externos, comportamiento normal
+    e.preventDefault();
+    setOpen(false);
+    const headerH =
+      document.querySelector('header')?.getBoundingClientRect().height || 0;
+    const target = document.querySelector(href);
+    if (target) {
+      const top = target.getBoundingClientRect().top + window.pageYOffset - headerH;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
-    // externo (WhatsApp) deja normal
   };
 
   return (
     <header className="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50 px-4 py-3 flex items-center justify-between">
       {/* Logo */}
       <img
-   src="/final fondo blanco.png"
-  alt="Logo"
-  className="h-10 w-10 sm:h-12 sm:w-12 rounded-full border-2 border-[#5568A9] object-contain"
-/>
+        src="/final fondo blanco.png"
+        alt="Logo"
+        className="h-10 w-10 sm:h-12 sm:w-12 rounded-full border-2 border-[#5568A9] object-contain"
+      />
 
-      {/* Desktop nav */}
+      {/* Navegación desktop */}
       <nav className="hidden md:flex space-x-4 items-center">
         {items.map((it) =>
           it.internal ? (
-            <a
+            <motion.a
               key={it.label}
               href={it.href}
               onClick={handleClick(it.href, true)}
               className="px-3 py-1 rounded-full text-[#5568A9] border border-[#5568A9] hover:bg-[#5568A9] hover:text-white transition"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
               {it.label}
-            </a>
+            </motion.a>
           ) : (
-            <a
+            <motion.a
               key={it.label}
               href={it.href}
               target="_blank"
               rel="noopener noreferrer"
               className="px-3 py-1 rounded-full bg-green-600 text-white hover:bg-green-600 transition flex items-center"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
               <img src="/whatsapp.png" alt="" className="h-4 w-4 mr-1" />
               WhatsApp
-            </a>
+            </motion.a>
           )
         )}
       </nav>
 
-      {/* Mobile toggle */}
+      {/* Menú móvil */}
       <div className="relative md:hidden" ref={menuRef}>
         <button
           className="p-2 focus:outline-none"
@@ -92,7 +90,7 @@ export default function Header() {
         </button>
 
         {open && (
-          <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-xl shadow-lg py-2">
+          <div className="absolute right-0 mt-2 w-44 bg-white border border-gray-200 rounded-xl shadow-lg py-2">
             {items.map((it) =>
               it.internal ? (
                 <a
@@ -118,60 +116,6 @@ export default function Header() {
             )}
           </div>
         )}
-<<<<<<< HEAD
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <motion.div
-          className="w-16 h-16 rounded-full overflow-hidden shadow-lg border-2 border-[#5568A9] flex items-center justify-center"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.3 }}
-        >
-          <img
-            src="/final fondo blanco.png"
-            alt="X Academy logo"
-            className="w-full h-full object-contain"
-          />
-        </motion.div>
-
-=======
-=======
->>>>>>> f2c1bc4359427c9cc7a8814f981361a9fad3402d
-        {/* Navegación */}
-        <nav className="flex items-center space-x-4">
-          {navItems.map((item) => (
-            <motion.a
-              key={item.label}
-              href={item.href}
-              className="px-4 py-2 rounded-full text-base font-medium bg-white text-[#5568A9] border border-[#5568A9] hover:bg-[#5568A9] hover:text-white transition"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-            >
-              {item.label}
-            </motion.a>
-          ))}
-          {/* WhatsApp Button */}
-           <motion.a
-          href="https://wa.me/8294513903"
-        target="_blank"
-        rel="noopener noreferrer"
-          className="flex items-center space-x-2 px-4 py-2 rounded-full text-base font-medium bg-green-600 text-white hover:bg-green-600 transition"
-          whileHover={{ scale: 1.05 }}
-         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-       >
-         {/* Icono de WhatsApp en PNG */}
-          <img
-            src="/whatsapp.png"
-          alt="WhatsApp icon"
-           className="w-5 h-5 object-contain"
-         />
-         <span>WhatsApp</span>       
-         </motion.a>
-        </nav>
-<<<<<<< HEAD
-=======
->>>>>>> e35b3d432a8050c4433dec60043ef7c793c83c4f
->>>>>>> f2c1bc4359427c9cc7a8814f981361a9fad3402d
       </div>
     </header>
   );

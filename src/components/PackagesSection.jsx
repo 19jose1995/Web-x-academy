@@ -1,10 +1,9 @@
-import React from 'react';
 
 const packages = [
   {
     emoji: '🎤',
     title: 'Stage Star',
-    price: 'RD$5,500',
+    price: 'RD$5,990',
     subtitle: 'Ideal para quienes aman brillar en escena',
     items: ['Canto', 'Teatro', 'Jazz'],
     color: '#ec1763', // rosa fuerte
@@ -12,7 +11,7 @@ const packages = [
   {
     emoji: '🩰',
     title: 'Arte en Movimiento',
-    price: 'RD$6,800',
+    price: 'RD$6,990',
     subtitle: 'Una formación sólida para futuros artistas escénicos',
     items: ['Ballet Clásico', 'Danza Contemporánea', 'Jazz'],
     color: '#5568af', // azul de la paleta para mejor contraste
@@ -20,7 +19,7 @@ const packages = [
   {
     emoji: '🌟',
     title: 'Pequeños en Escena',
-    price: 'RD$4,500',
+    price: 'RD$4,990',
     subtitle: 'Para niños y niñas desde los 4 años: diversión y expresión corporal',
     items: ['Preballet / Movimiento Creativo', 'Jazz / Hip Hop Kids'],
     color: '#ff8c00', // verde lima
@@ -28,7 +27,7 @@ const packages = [
   {
     emoji: '🔥',
     title: 'Street Vibes',
-    price: 'RD$6,800',
+    price: 'RD$6,990',
     subtitle: 'Para los que llevan el ritmo en las venas y pisan fuerte con estilo',
     items: ['Hip Hop', 'Jazz', 'Heels'],
     color: '#f37826', // naranja
