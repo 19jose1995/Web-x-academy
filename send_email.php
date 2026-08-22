@@ -1,4 +1,37 @@
 <?php
+
+$type = $_POST['type'] ?? 'registro';
+
+if ($type === 'pedido') {
+    $package = filter_input(INPUT_POST, 'package', FILTER_SANITIZE_STRING);
+    $name    = filter_input(INPUT_POST, 'name',    FILTER_SANITIZE_STRING);
+    $contact = filter_input(INPUT_POST, 'contact', FILTER_SANITIZE_STRING);
+
+    $to      = 'info@xacademy.com.do';
+    $subject = 'Nuevo pedido en X Academy';
+    $message  = "Nuevo pedido recibido en X Academy:\r\n\r\n";
+    $message .= "Paquete: $package\r\n";
+    $message .= "Nombre: $name\r\n";
+    $message .= "Contacto: $contact\r\n";
+
+    $headers = "From: no-reply@xacademy.com.do\r\n";
+    // "contact" puede ser teléfono o correo; solo se usa como Reply-To si es un correo válido
+    // (un teléfono ahí generaría una cabecera Reply-To inválida).
+    if (filter_var($contact, FILTER_VALIDATE_EMAIL)) {
+        $headers .= "Reply-To: $contact\r\n";
+    }
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    if (mail($to, $subject, $message, $headers)) {
+        http_response_code(200);
+        echo 'OK';
+    } else {
+        http_response_code(500);
+        echo 'ERROR';
+    }
+    exit;
+}
+
 // 1) Destino del correo:
 $to      = 'info@xacademy.com.do';
 $subject = 'Nuevo registro en X Academy';
