@@ -11,6 +11,7 @@ import RegistrationForm from "./components/RegistrationForm";
 import InteractiveMap from "./components/InteractiveMap";
 import MaestrosDestacados from "./components/MaestrosDestacados";
 import InstalacionesVideo from "./components/InstalacionesVideo";
+import PackagesSection from "./components/PackagesSection";
 import ScrollIndicator from "./components/ScrollIndicator";
 
 /* ─── DATOS ─────────────────────────────────────────────────────── */
@@ -372,6 +373,9 @@ export default function App() {
           </motion.div>
         </div>
       </section>
+
+      {/* ══ PAQUETES ════════════════════════════════════════════ */}
+      <PackagesSection />
 
       {/* ══ FORMULARIO ══════════════════════════════════════════ */}
       <RegistrationForm />
