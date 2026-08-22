@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown, ChevronUp, Instagram, X } from 'lucide-react';
 
 const images = [
   '/Gallery/img1 (2).jpg',
@@ -69,15 +70,11 @@ export default function Gallery() {
         className="relative py-24 px-4 sm:px-8 overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #1a1a2e 100%)' }}
       >
-        {/* Brillo de fondo */}
-        <div className="pointer-events-none absolute top-0 left-1/4 h-96 w-96 rounded-full bg-[#ec1763]/10 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-[#5568A9]/10 blur-3xl" />
-
         {/* Título */}
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
             Nuestra{' '}
-            <span className="bg-gradient-to-r from-[#ec1763] via-[#f37826] to-[#cdd629] bg-clip-text text-transparent">
+            <span style={{ color: "#ec1763" }}>
               Galería
             </span>
           </h2>
@@ -149,9 +146,9 @@ export default function Gallery() {
             className="inline-flex items-center gap-2 rounded-full bg-white/15 border border-white/25 px-6 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/25 hover:scale-105"
           >
             {showMore ? (
-              <><span>▲</span> Ver menos</>
+              <><ChevronUp className="h-4 w-4" /> Ver menos</>
             ) : (
-              <><span>▼</span> Ver más fotos ({images.slice(8).length})</>
+              <><ChevronDown className="h-4 w-4" /> Ver más fotos ({images.slice(8).length})</>
             )}
           </button>
           <a
@@ -160,7 +157,7 @@ export default function Gallery() {
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-105"
           >
-            <span>📸</span> Ver más en Instagram
+            <Instagram className="h-4 w-4" /> Ver más en Instagram
           </a>
         </div>
       </section>
@@ -225,9 +222,9 @@ export default function Gallery() {
             {/* Botón cerrar */}
             <button
               onClick={close}
-              className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition text-xl"
+              className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition"
             >
-              ✕
+              <X className="h-5 w-5" />
             </button>
 
             {/* Flecha prev */}

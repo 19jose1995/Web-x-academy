@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { X } from 'lucide-react';
 
 const NAV = [
   { label: 'Clases',    href: '#clases' },
@@ -109,10 +110,10 @@ export default function Header() {
             <div className="flex items-center justify-between px-5 h-16">
               <img src="/logo.png" alt="X Academy" className="h-9 object-contain brightness-0 invert" />
               <button
-                className="text-white/60 hover:text-white text-2xl transition"
+                className="text-white/60 hover:text-white transition"
                 onClick={() => setOpen(false)}
               >
-                ✕
+                <X className="h-6 w-6" />
               </button>
             </div>
 
