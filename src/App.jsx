@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Music2, Mic2, Theater } from "lucide-react";
+import { Music2, Mic2, Theater, GraduationCap, Star, Trophy, MapPin, Clock, Phone, Mail, Instagram, Sparkles } from "lucide-react";
 
 import Header from "./components/Header";
 import Gallery from "./components/Gallery";
@@ -16,10 +16,10 @@ import ScrollIndicator from "./components/ScrollIndicator";
 /* ─── DATOS ─────────────────────────────────────────────────────── */
 
 const STATS = [
-  { value: "200+", label: "Estudiantes",      icon: "🎓" },
-  { value: "8",    label: "Maestros",         icon: "⭐" },
-  { value: "20+",  label: "Clases",           icon: "🎭" },
-  { value: "5+",   label: "Años de arte",     icon: "🏆" },
+  { value: "200+", label: "Estudiantes",      icon: GraduationCap },
+  { value: "8",    label: "Maestros",         icon: Star },
+  { value: "20+",  label: "Clases",           icon: Theater },
+  { value: "5+",   label: "Años de arte",     icon: Trophy },
 ];
 
 const CLASES = [
@@ -76,10 +76,10 @@ const HORARIOS = [
 ];
 
 const CAT_TABS = [
-  { id: "todos",  label: "Todos",  icon: "🎪", color: "#5568A9" },
-  { id: "danza",  label: "Danza",  icon: "💃", color: "#ec1763" },
-  { id: "canto",  label: "Canto",  icon: "🎤", color: "#cdd629" },
-  { id: "teatro", label: "Teatro", icon: "🎭", color: "#5568A9" },
+  { id: "todos",  label: "Todos",  icon: Sparkles, color: "#5568A9" },
+  { id: "danza",  label: "Danza",  icon: Music2,   color: "#ec1763" },
+  { id: "canto",  label: "Canto",  icon: Mic2,     color: "#cdd629" },
+  { id: "teatro", label: "Teatro", icon: Theater,  color: "#5568A9" },
 ];
 
 const CAT_COLOR = {
@@ -90,7 +90,7 @@ const CAT_COLOR = {
 };
 
 /* ─── CONTADOR ──────────────────────────────────────────────────── */
-function CountStat({ value, label, icon }) {
+function CountStat({ value, label, icon: Icon }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   return (
@@ -101,7 +101,7 @@ function CountStat({ value, label, icon }) {
       transition={{ duration: 0.6 }}
       className="flex flex-col items-center gap-1"
     >
-      <span className="text-3xl">{icon}</span>
+      <Icon className="h-8 w-8 text-white/80" strokeWidth={1.5} />
       <span className="text-4xl sm:text-5xl font-extrabold text-white">{value}</span>
       <span className="text-sm font-medium text-white/60 tracking-wide uppercase">{label}</span>
     </motion.div>
@@ -145,14 +145,12 @@ export default function App() {
       {/* ══ HERO ══════════════════════════════════════════════════ */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-24 overflow-hidden">
 
-        {/* ── Video de fondo ── */}
-        <video
+        {/* Fondo: pendiente subir video real a /public/videos; fallback a imagen estática */}
+        <img
+          src="/final.png"
+          alt=""
           className="absolute inset-0 h-full w-full object-cover"
-          autoPlay muted loop playsInline preload="metadata"
-          poster="/final.png"
-        >
-          <source src="/videos/IMG_3025.MOV" type="video/mp4" />
-        </video>
+        />
 
         {/* ── Overlays ── */}
         {/* Capa oscura base */}
@@ -181,7 +179,7 @@ export default function App() {
         >
           Descubre tu talento
           <br />
-          <span style={{ background: "linear-gradient(90deg,#ec1763,#f37826,#cdd629)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+          <span style={{ color: "#ec1763" }}>
             en X Academy
           </span>
         </motion.h1>
@@ -249,12 +247,8 @@ export default function App() {
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               className="group relative overflow-hidden rounded-3xl p-8 shadow-xl cursor-pointer block"
-              style={{ background: `linear-gradient(135deg, ${c.from}, ${c.to})` }}
+              style={{ background: c.from }}
             >
-              {/* Blob decorativo */}
-              <div className="pointer-events-none absolute -top-8 -right-8 h-36 w-36 rounded-full bg-white/10 blur-xl" />
-              <div className="pointer-events-none absolute -bottom-8 -left-8 h-24 w-24 rounded-full bg-white/10 blur-xl" />
-
               <div className="relative"><ClasesIcon type={c.type} /></div>
               <h3 className="relative mt-4 text-2xl font-extrabold text-white">{c.title}</h3>
               <p className="relative mt-2 text-white/80 text-sm leading-relaxed">{c.desc}</p>
@@ -281,16 +275,11 @@ export default function App() {
       {/* ══ HORARIOS ════════════════════════════════════════════ */}
       <section id="horarios" className="px-6 py-20 relative overflow-hidden"
         style={{ background: "linear-gradient(135deg,#1a1a2e 0%,#302b63 60%,#1a1a2e 100%)" }}>
-        {/* Brillos de fondo */}
-        <div className="pointer-events-none absolute top-0 left-1/4 h-80 w-80 rounded-full bg-[#ec1763]/8 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-[#5568A9]/10 blur-3xl" />
-        <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-[#cdd629]/5 blur-3xl" />
-
         <div className="mx-auto max-w-6xl relative">
           <div data-aos="fade-up" className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
               Clases y{' '}
-              <span className="bg-gradient-to-r from-[#ec1763] via-[#f37826] to-[#cdd629] bg-clip-text text-transparent">
+              <span style={{ color: "#ec1763" }}>
                 Horarios
               </span>
             </h2>
@@ -310,7 +299,7 @@ export default function App() {
                     : { background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.6)", border: "1px solid rgba(255,255,255,0.12)" }
                 }
               >
-                <span>{t.icon}</span> {t.label}
+                <t.icon className="h-4 w-4" strokeWidth={2} /> {t.label}
               </button>
             ))}
           </div>
@@ -334,19 +323,13 @@ export default function App() {
                   className="relative rounded-2xl p-5 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
                   style={
                     h.featured
-                      ? { background: `linear-gradient(135deg, ${c.from}, ${c.to})`, boxShadow: `0 8px 32px ${c.main}55` }
+                      ? { background: c.main, boxShadow: `0 8px 32px ${c.main}55` }
                       : { background: c.bg, border: `1px solid ${c.main}25` }
                   }
                 >
                   {/* Barra superior de color */}
                   <div
                     className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
-                    style={{ background: `linear-gradient(90deg, ${c.from}, ${c.to})` }}
-                  />
-
-                  {/* Blob decorativo */}
-                  <div
-                    className="pointer-events-none absolute -top-6 -right-6 h-20 w-20 rounded-full blur-xl opacity-40"
                     style={{ background: c.main }}
                   />
 
@@ -363,10 +346,10 @@ export default function App() {
                       </span>
                     ) : (
                       <span
-                        className="shrink-0 rounded-full px-2 py-0.5 text-xs font-bold"
+                        className="shrink-0 inline-flex items-center rounded-full p-1"
                         style={{ background: `${c.main}22`, color: c.main }}
                       >
-                        {h.cat === "danza" ? "💃" : h.cat === "canto" ? "🎤" : "🎭"}
+                        {h.cat === "danza" ? <Music2 className="h-3 w-3" /> : h.cat === "canto" ? <Mic2 className="h-3 w-3" /> : <Theater className="h-3 w-3" />}
                       </span>
                     )}
                   </div>
@@ -402,13 +385,13 @@ export default function App() {
 
             <div className="mt-6 space-y-4 text-sm divide-y divide-slate-100">
               {[
-                { icon: "📍", label: "Dirección",  color: "#5568A9", value: "Club Arroyo Hondo, Calle Dr. José Antonio Polanco Billini 10" },
-                { icon: "🕐", label: "Horario",    color: "#5568A9", value: "Lun–Vie: 2:00 PM – 9:00 PM\nSáb: 9:00 AM – 1:00 PM\nDom: Cerrado" },
-                { icon: "📞", label: "Teléfono",   color: "#ec1763", value: "+1 (809) 381-5369" },
-                { icon: "✉️", label: "Email",      color: "#f37826", value: "info@xacademy.com.do" },
-              ].map(({ icon, label, color, value }) => (
+                { icon: MapPin, label: "Dirección",  color: "#5568A9", value: "Club Arroyo Hondo, Calle Dr. José Antonio Polanco Billini 10" },
+                { icon: Clock,  label: "Horario",    color: "#5568A9", value: "Lun–Vie: 2:00 PM – 9:00 PM\nSáb: 9:00 AM – 1:00 PM\nDom: Cerrado" },
+                { icon: Phone,  label: "Teléfono",   color: "#ec1763", value: "+1 (809) 381-5369" },
+                { icon: Mail,   label: "Email",      color: "#f37826", value: "info@xacademy.com.do" },
+              ].map(({ icon: Icon, label, color, value }) => (
                 <div key={label} className="flex gap-3 pt-4 first:pt-0">
-                  <span className="text-xl shrink-0">{icon}</span>
+                  <Icon className="h-5 w-5 shrink-0" style={{ color }} strokeWidth={1.75} />
                   <div>
                     <div className="font-bold text-xs tracking-wide uppercase" style={{ color }}>{label}</div>
                     <div className="text-slate-600 whitespace-pre-line mt-0.5">{value}</div>
@@ -423,11 +406,11 @@ export default function App() {
           </div>
 
           <div data-aos="fade-left" className="relative overflow-hidden rounded-3xl shadow-2xl flex flex-col bg-black min-h-[420px]">
-            {/* Video de fondo */}
-            <video
+            {/* Fondo: pendiente subir video real a /public/videos; fallback a imagen estática */}
+            <img
+              src="/final.png"
+              alt=""
               className="absolute inset-0 w-full h-full object-cover opacity-70"
-              src="/videos/IMG_3025.MOV"
-              autoPlay muted loop playsInline
             />
             {/* Overlay gradiente */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
@@ -435,12 +418,12 @@ export default function App() {
             {/* Contenido encima del video */}
             <div className="relative flex flex-col justify-between h-full p-8 flex-1">
               <div>
-                <span className="inline-block rounded-full bg-white/15 backdrop-blur-sm border border-white/20 px-3 py-1 text-xs font-semibold text-white/80 mb-4">
-                  📍 Arroyo Hondo · Santo Domingo
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 px-3 py-1 text-xs font-semibold text-white/80 mb-4">
+                  <MapPin className="h-3.5 w-3.5" /> Arroyo Hondo · Santo Domingo
                 </span>
                 <h3 className="text-4xl font-black text-white leading-tight drop-shadow-lg">
                   X Academy<br />
-                  <span className="bg-gradient-to-r from-[#ec1763] via-[#f37826] to-[#cdd629] bg-clip-text text-transparent">
+                  <span style={{ color: "#ec1763" }}>
                     Sede Física
                   </span>
                 </h3>
@@ -455,7 +438,7 @@ export default function App() {
                   </a>
                   <a href="https://instagram.com/xacademyarts" target="_blank" rel="noreferrer"
                     className="flex items-center gap-2 rounded-full bg-white/15 backdrop-blur-sm px-5 py-2.5 text-sm font-bold text-white border border-white/25 transition hover:scale-105 hover:bg-white/25">
-                    📸 Instagram
+                    <Instagram className="h-4 w-4" /> Instagram
                   </a>
                 </div>
               </div>
@@ -486,9 +469,9 @@ export default function App() {
           <div>
             <h4 className="font-bold text-white mb-4 text-sm tracking-widest uppercase">Contacto</h4>
             <ul className="space-y-2.5 text-sm text-white/50">
-              <li>📞 +1 (809) 381-5369</li>
-              <li>✉️ info@xacademy.com.do</li>
-              <li>📍 Club Arroyo Hondo, Santo Domingo</li>
+              <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0" /> +1 (809) 381-5369</li>
+              <li className="flex items-center gap-2"><Mail className="h-4 w-4 shrink-0" /> info@xacademy.com.do</li>
+              <li className="flex items-center gap-2"><MapPin className="h-4 w-4 shrink-0" /> Club Arroyo Hondo, Santo Domingo</li>
             </ul>
             <div className="mt-5 flex gap-3">
               <a href="https://wa.me/18093815369" target="_blank" rel="noreferrer"
@@ -496,8 +479,9 @@ export default function App() {
                 <img src="/whatsapp.png" alt="WhatsApp" className="h-5 w-5" />
               </a>
               <a href="https://instagram.com/xacademyarts" target="_blank" rel="noreferrer"
-                className="h-10 w-10 flex items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-pink-500 text-white transition hover:scale-110 text-lg">
-                📸
+                aria-label="Instagram"
+                className="h-10 w-10 flex items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-pink-500 text-white transition hover:scale-110">
+                <Instagram className="h-5 w-5" />
               </a>
             </div>
           </div>

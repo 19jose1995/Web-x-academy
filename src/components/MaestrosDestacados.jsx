@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { X } from 'lucide-react';
 
 const maestros = [
   {
@@ -75,7 +76,7 @@ export default function MaestrosDestacados() {
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
             Conoce a Nuestros{' '}
-            <span className="bg-gradient-to-r from-[#ec1763] via-[#f37826] to-[#cdd629] bg-clip-text text-transparent">
+            <span style={{ color: "#ec1763" }}>
               Maestros
             </span>
           </h2>
@@ -147,9 +148,9 @@ export default function MaestrosDestacados() {
               {/* Cerrar */}
               <button
                 onClick={() => setSelected(null)}
-                className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 text-white text-sm hover:bg-black/50 transition"
+                className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 text-white hover:bg-black/50 transition"
               >
-                ✕
+                <X className="h-4 w-4" />
               </button>
             </motion.div>
           </motion.div>

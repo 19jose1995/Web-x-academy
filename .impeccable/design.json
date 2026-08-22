@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-22T00:00:00Z",
+  "title": "Design System: X Academy",
+  "extensions": {
+    "colorMeta": {
+      "spotlight-magenta": {
+        "role": "primary",
+        "displayName": "Magenta de Reflector",
+        "canonical": "#ec1763",
+        "tonalRamp": ["#3a0316", "#5c0524", "#830735", "#ec1763", "#f5589a", "#f987b7", "#fcb8d3", "#fee6ef"]
+      },
+      "company-blue": {
+        "role": "secondary",
+        "displayName": "Azul Compañía",
+        "canonical": "#5568A9",
+        "tonalRamp": ["#12162b", "#1e2444", "#2e3868", "#5568A9", "#8092c4", "#a3b0d8", "#c7cfe9", "#eceff8"]
+      },
+      "rehearsal-green": {
+        "role": "tertiary",
+        "displayName": "Verde Ensayo",
+        "canonical": "#cdd629",
+        "tonalRamp": ["#363a05", "#565c08", "#7c840c", "#a7b015", "#cdd629", "#dde366", "#ebefa3", "#f8fae0"]
+      },
+      "curtain-orange": {
+        "role": "tertiary",
+        "displayName": "Naranja Telón",
+        "canonical": "#f37826",
+        "tonalRamp": ["#3d1c05", "#5f2c08", "#8a400b", "#c25e18", "#f37826", "#f79a5e", "#fbc097", "#fee6d3"]
+      },
+      "night-void": {
+        "role": "neutral",
+        "displayName": "Noche de Función",
+        "canonical": "#0f0c29",
+        "tonalRamp": ["#0f0c29", "#1a1640", "#2a2461", "#4a4290", "#7b74b8", "#a29cd1", "#c8c4e5", "#ece9f7"]
+      },
+      "deep-violet": {
+        "role": "neutral",
+        "displayName": "Violeta Profundo",
+        "canonical": "#302b63",
+        "tonalRamp": ["#0f0c29", "#1a1640", "#241f52", "#302b63", "#4f4890", "#7972b3", "#a7a2d1", "#d8d5ec"]
+      },
+      "ink-navy": {
+        "role": "neutral",
+        "displayName": "Tinta Navy",
+        "canonical": "#1a1a2e",
+        "tonalRamp": ["#0a0a12", "#121220", "#1a1a2e", "#33334f", "#55557a", "#8080a0", "#b0b0c8", "#e0e0ea"]
+      },
+      "ink-slate": {
+        "role": "neutral",
+        "displayName": "Tinta Pizarra",
+        "canonical": "#1e293b",
+        "tonalRamp": ["#0b0f16", "#131a24", "#1e293b", "#334155", "#64748b", "#94a3b8", "#cbd5e1", "#f1f5f9"]
+      },
+      "muted-slate": {
+        "role": "neutral",
+        "displayName": "Pizarra Apagada",
+        "canonical": "#64748b",
+        "tonalRamp": ["#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#b4bfcc", "#cbd5e1", "#f1f5f9"]
+      },
+      "paper-white": {
+        "role": "neutral",
+        "displayName": "Blanco Papel",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#1a1a1a", "#333333", "#4d4d4d", "#808080", "#b3b3b3", "#cccccc", "#e6e6e6", "#ffffff"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Titular del hero. Una vez por página." },
+      "headline": { "displayName": "Headline", "purpose": "Título de cada sección." },
+      "title": { "displayName": "Title", "purpose": "Títulos de tarjeta: clase, maestro." },
+      "body": { "displayName": "Body", "purpose": "Párrafos descriptivos, máx. ~65ch." },
+      "label": { "displayName": "Label", "purpose": "Metadatos: categoría, badges, encabezados de contacto." }
+    },
+    "shadows": [
+      { "name": "card-lift", "value": "0 20px 40px -12px rgba(15,12,41,0.25)", "purpose": "Tarjetas que genuinamente flotan: panel de registro, tarjeta destacada Open Class." },
+      { "name": "nav-scrolled", "value": "backdrop-filter: blur(16px); background: rgba(15,12,41,0.88)", "purpose": "Único glassmorphism funcional del sistema — legibilidad del nav fijo." }
+    ],
+    "motion": [
+      { "name": "ease-scroll-reveal", "value": "cubic-bezier(0.33, 1, 0.68, 1)", "purpose": "Entradas por scroll (AOS), 700ms, una sola vez por elemento." },
+      { "name": "spring-standard", "value": "stiffness: 300, damping: 20", "purpose": "Micro-interacciones hover/press (Framer Motion spring)." },
+      { "name": "ease-hero-entrance", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Entrada del logo y titular del hero." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA principal de conversión — 'Inscríbete Ahora'.",
+      "html": "<a href=\"#\" class=\"ds-btn-primary\">Inscríbete Ahora</a>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:center; padding:14px 32px; border-radius:9999px; background:#f37826; color:#ffffff; font-weight:700; font-size:16px; text-decoration:none; box-shadow:0 12px 24px -8px rgba(243,120,38,0.45); transition:background 0.2s ease, transform 0.2s ease; } .ds-btn-primary:hover { background:#ff8a3d; transform:scale(1.05); } .ds-btn-primary:focus-visible { outline:2px solid #ffffff; outline-offset:2px; }"
+    },
+    {
+      "name": "WhatsApp Gradient Button",
+      "kind": "button",
+      "refersTo": "button-cta-gradient",
+      "description": "Único uso permitido del degradado de marca: relleno sólido de un botón, nunca texto.",
+      "html": "<a href=\"#\" class=\"ds-btn-whatsapp\"><svg class=\"ds-btn-whatsapp__icon\" viewBox=\"0 0 24 24\" fill=\"currentColor\" width=\"16\" height=\"16\"><path d=\"M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm0 2a8 8 0 11-4.2 14.8l-.3-.2-2.9.9.9-2.8-.2-.3A8 8 0 0112 4z\"/></svg><span>WhatsApp</span></a>",
+      "css": ".ds-btn-whatsapp { display:inline-flex; align-items:center; gap:8px; padding:12px 20px; border-radius:9999px; background:linear-gradient(135deg,#ec1763,#f37826); color:#ffffff; font-weight:700; font-size:14px; text-decoration:none; box-shadow:0 4px 16px rgba(236,23,99,0.35); transition:transform 0.2s ease; } .ds-btn-whatsapp__icon { flex-shrink:0; } .ds-btn-whatsapp:hover { transform:scale(1.05); } .ds-btn-whatsapp:focus-visible { outline:2px solid #ffffff; outline-offset:2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Acción secundaria sobre fondo oscuro o imagen — 'Ver clases'.",
+      "html": "<a href=\"#\" class=\"ds-btn-ghost\">Ver clases</a>",
+      "css": ".ds-btn-ghost { display:inline-flex; align-items:center; justify-content:center; padding:14px 32px; border-radius:9999px; background:rgba(255,255,255,0.1); border:2px solid rgba(255,255,255,0.3); color:#ffffff; font-weight:700; font-size:16px; text-decoration:none; backdrop-filter:blur(8px); transition:background 0.2s ease, transform 0.2s ease; } .ds-btn-ghost:hover { background:rgba(255,255,255,0.2); transform:scale(1.05); } .ds-btn-ghost:focus-visible { outline:2px solid #ffffff; outline-offset:2px; }"
+    },
+    {
+      "name": "Category Chip",
+      "kind": "chip",
+      "refersTo": "chip-active",
+      "description": "Tabs de filtro de categoría en Horarios. Icono debe ser lucide-react, no emoji.",
+      "html": "<div class=\"ds-chip-row\"><button class=\"ds-chip ds-chip--active\">Danza</button><button class=\"ds-chip\">Canto</button></div>",
+      "css": ".ds-chip-row { display:flex; gap:12px; flex-wrap:wrap; } .ds-chip { display:inline-flex; align-items:center; gap:8px; padding:10px 20px; border-radius:9999px; font-weight:600; font-size:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); color:rgba(255,255,255,0.6); transition:all 0.3s ease; cursor:pointer; } .ds-chip--active { background:#ec1763; color:#ffffff; border-color:transparent; box-shadow:0 4px 20px rgba(236,23,99,0.35); transform:scale(1.06); } .ds-chip:hover { background:rgba(255,255,255,0.15); } .ds-chip:focus-visible { outline:2px solid #ffffff; outline-offset:2px; }"
+    },
+    {
+      "name": "Schedule Card",
+      "kind": "card",
+      "refersTo": "card-horario",
+      "description": "Tarjeta de horario — borde superior de color como único acento, sin blob decorativo.",
+      "html": "<div class=\"ds-card-horario\"><span class=\"ds-card-horario__label\">Ballet 1</span><ul class=\"ds-card-horario__lines\"><li>Lun/Mié: 4:30–5:30 PM</li><li>Sáb: 4:30–5:30 PM</li></ul></div>",
+      "css": ".ds-card-horario { position:relative; border-radius:16px; padding:20px; background:rgba(236,23,99,0.08); border:1px solid rgba(236,23,99,0.15); overflow:hidden; transition:transform 0.3s ease, box-shadow 0.3s ease; } .ds-card-horario::before { content:\"\"; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,#ec1763,#ff6b9d); } .ds-card-horario__label { display:block; font-weight:800; font-size:14px; color:#c4004f; margin-bottom:12px; } .ds-card-horario__lines { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px; font-size:12px; color:rgba(255,255,255,0.55); } .ds-card-horario:hover { transform:translateY(-4px); box-shadow:0 20px 40px -16px rgba(15,12,41,0.35); }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Campo de texto del formulario de registro.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field__label\">Nombre completo</span><input class=\"ds-field__input\" type=\"text\" placeholder=\"Tu nombre\"/></label>",
+      "css": ".ds-field { display:flex; flex-direction:column; gap:6px; } .ds-field__label { font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#64748b; } .ds-field__input { width:100%; border-radius:12px; border:1px solid #e2e8f0; background:#ffffff; padding:12px 16px; font-size:14px; color:#1e293b; transition:border-color 0.2s ease, box-shadow 0.2s ease; } .ds-field__input::placeholder { color:#94a3b8; } .ds-field__input:focus { outline:none; border-color:rgba(85,104,169,0.6); box-shadow:0 0 0 2px rgba(85,104,169,0.3); }"
+    },
+    {
+      "name": "Sticky Nav",
+      "kind": "nav",
+      "refersTo": "nav-header",
+      "description": "Nav fijo, transparente sobre el hero, glass al hacer scroll — único blur funcional del sistema.",
+      "html": "<header class=\"ds-nav ds-nav--scrolled\"><span class=\"ds-nav__logo\">X Academy</span><nav class=\"ds-nav__links\"><a href=\"#\" class=\"ds-nav__link\">Clases</a><a href=\"#\" class=\"ds-nav__link\">Horarios</a></nav></header>",
+      "css": ".ds-nav { display:flex; align-items:center; justify-content:space-between; padding:0 20px; height:64px; transition:all 0.5s ease; background:transparent; } .ds-nav--scrolled { background:rgba(15,12,41,0.88); backdrop-filter:blur(16px); border-bottom:1px solid rgba(255,255,255,0.08); } .ds-nav__logo { color:#ffffff; font-weight:900; font-size:18px; } .ds-nav__links { display:flex; align-items:center; gap:4px; } .ds-nav__link { position:relative; padding:6px 12px; font-size:14px; font-weight:500; color:rgba(255,255,255,0.75); text-decoration:none; transition:color 0.2s ease; } .ds-nav__link:hover { color:#ffffff; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El Escenario Encendido",
+    "overview": "X Academy vive el segundo antes de salir a escena: las luces ya están encendidas, el elenco espera entre bastidores, hay energía en el aire pero todavía hay disciplina y orden — nadie está gritando a la vez. El sistema traduce eso en un solo tono tipográfico llevado a sus extremos (negro grueso para el titular, regular para todo lo demás) y cuatro colores de reflector, cada uno asignado a una disciplina, en vez de un arcoíris decorativo sin significado. Este sistema rechaza explícitamente el scaffold visual genérico de interfaces generadas por IA: texto con gradiente como recurso de énfasis, glassmorphism decorativo en cada tarjeta, emojis haciendo de iconografía funcional, blobs desenfocados repetidos en cada esquina, y grids de tarjetas idénticas por pereza compositiva.",
+    "keyCharacteristics": [
+      "Un solo tipo de letra (Inter) llevado de 400 a 900 — contraste por peso, no por mezcla de fuentes.",
+      "Cuatro acentos de marca, cada uno ligado a una disciplina, nunca intercambiables.",
+      "Fondos oscuros para las secciones backstage; fondos claros para las secciones informativas.",
+      "Sombra funcional, no decorativa: la profundidad se reserva para lo que de verdad flota sobre la página."
+    ],
+    "rules": [
+      { "name": "The Four-Light Rule", "body": "Los cuatro acentos de marca no son decoración intercambiable — cada uno está atado a exactamente una disciplina o propósito.", "section": "colors" },
+      { "name": "The One-Gradient Rule", "body": "El degradado de marca se reserva para el fondo de botones CTA sólidos; nunca para background-clip: text.", "section": "colors" },
+      { "name": "The Shout-and-Speak Rule", "body": "Los titulares comprometen 800–900 de peso a tamaño grande; todo lo demás se queda en 400–600. No hay pesos intermedios en titulares.", "section": "typography" },
+      { "name": "The One-Glow Rule", "body": "Como máximo un elemento por sección puede llevar un halo de color. Si dos o más brillan a la vez, ninguno se lee como especial.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do mantener el código de cuatro colores atado a su disciplina.",
+      "Do usar rellenos sólidos de color de marca; reservar el degradado a botones CTA.",
+      "Do conservar el blur del nav al hacer scroll — único glassmorphism funcional.",
+      "Do limitar sombra/brillo a elementos que genuinamente flotan sobre la página.",
+      "Do reemplazar cada emoji funcional por iconos de línea de lucide-react.",
+      "Do cumplir contraste WCAG AA en todo texto sobre fondo de color o degradado."
+    ],
+    "donts": [
+      "Don't usar background-clip: text con degradado.",
+      "Don't usar emoji como iconografía funcional.",
+      "Don't repetir blobs desenfocados detrás de cada tarjeta.",
+      "Don't clonar el chrome de Instagram para mostrar videos propios.",
+      "Don't dejar <video> apuntando a archivos que no existen en el repo.",
+      "Don't repetir la misma plantilla de tarjeta sin diferenciar estructura."
+    ]
+  }
+}

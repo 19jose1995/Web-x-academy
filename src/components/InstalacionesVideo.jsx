@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Instagram, X } from 'lucide-react';
 
 const VIDEOS = [
   {
@@ -56,7 +57,7 @@ export default function InstalacionesVideo() {
           <div className="text-center mb-10">
             <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
               Nuestras{' '}
-              <span className="bg-gradient-to-r from-[#ec1763] via-[#f37826] to-[#cdd629] bg-clip-text text-transparent">
+              <span style={{ color: "#ec1763" }}>
                 Instalaciones
               </span>
             </h2>
@@ -105,7 +106,7 @@ export default function InstalacionesVideo() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-105"
             >
-              📸 Ver más en Instagram
+              <Instagram className="h-4 w-4" /> Ver más en Instagram
             </a>
           </div>
         </div>
@@ -143,9 +144,9 @@ export default function InstalacionesVideo() {
                 <span className="text-white text-sm font-bold flex-1">xacademyarts</span>
                 <button
                   onClick={() => setActive(null)}
-                  className="text-white/60 hover:text-white text-xl transition"
+                  className="text-white/60 hover:text-white transition"
                 >
-                  ✕
+                  <X className="h-5 w-5" />
                 </button>
               </div>
 
