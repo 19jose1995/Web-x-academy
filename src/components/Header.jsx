@@ -2,19 +2,20 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const NAV = [
-  { label: 'Clases',    href: '#clases' },
-  { label: 'Maestros',  href: '#maestros' },
-  { label: 'Horarios',  href: '#horarios' },
-  { label: 'Galería',   href: '#galeria' },
-  { label: 'Registro',  href: '#registro' },
+  { label: 'Clases',   href: '/#clases',   hash: '#clases' },
+  { label: 'Maestros', href: '/#maestros', hash: '#maestros' },
+  { label: 'Horarios', href: '/#horarios', hash: '#horarios' },
+  { label: 'Galería',  href: '/#galeria',  hash: '#galeria' },
+  { label: 'Registro', href: '/#registro', hash: '#registro' },
 ];
 
-function scrollTo(href) {
-  const el = document.querySelector(href);
-  if (!el) return;
+function smoothScrollTo(hash) {
+  const el = document.querySelector(hash);
+  if (!el) return false;
   const offset = 72;
   const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
   window.scrollTo({ top, behavior: 'smooth' });
+  return true;
 }
 
 export default function Header() {
@@ -27,11 +28,23 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Bloquea scroll cuando el menú móvil está abierto
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [open]);
+
+  function handleNavClick(e, hash) {
+    const scrolled = smoothScrollTo(hash);
+    if (scrolled) e.preventDefault();
+    // else: let browser navigate to href="/#section"
+  }
+
+  function handleLogoClick(e) {
+    if (window.location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
 
   return (
     <>
@@ -46,11 +59,7 @@ export default function Header() {
         <div className="mx-auto max-w-6xl px-5 h-16 sm:h-18 flex items-center justify-between">
 
           {/* Logo */}
-          <a
-            href="#"
-            onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-            className="shrink-0"
-          >
+          <a href="/" onClick={handleLogoClick} className="shrink-0">
             <img src="/logo.png" alt="X Academy" className="h-9 sm:h-11 object-contain brightness-0 invert" />
           </a>
 
@@ -60,7 +69,7 @@ export default function Header() {
               <a
                 key={it.label}
                 href={it.href}
-                onClick={(e) => { e.preventDefault(); scrollTo(it.href); }}
+                onClick={(e) => handleNavClick(e, it.hash)}
                 className="relative px-3 py-1.5 text-sm font-medium text-white/75 hover:text-white transition-colors duration-200 group"
               >
                 {it.label}
@@ -105,7 +114,6 @@ export default function Header() {
             className="fixed inset-0 z-40 flex flex-col"
             style={{ background: 'linear-gradient(135deg,#0f0c29 0%,#302b63 60%,#1a1a2e 100%)' }}
           >
-            {/* Logo arriba */}
             <div className="flex items-center justify-between px-5 h-16">
               <img src="/logo.png" alt="X Academy" className="h-9 object-contain brightness-0 invert" />
               <button
@@ -116,7 +124,6 @@ export default function Header() {
               </button>
             </div>
 
-            {/* Links grandes */}
             <nav className="flex flex-col justify-center flex-1 px-8 gap-2">
               {NAV.map((it, i) => (
                 <motion.a
@@ -125,7 +132,15 @@ export default function Header() {
                   initial={{ opacity: 0, x: -24 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: i * 0.07 }}
-                  onClick={(e) => { e.preventDefault(); setOpen(false); setTimeout(() => scrollTo(it.href), 300); }}
+                  onClick={(e) => {
+                    const scrolled = smoothScrollTo(it.hash);
+                    if (scrolled) {
+                      e.preventDefault();
+                      setOpen(false);
+                    } else {
+                      setOpen(false);
+                    }
+                  }}
                   className="text-4xl font-black text-white/80 hover:text-white py-2 transition-colors border-b border-white/10"
                 >
                   {it.label}
@@ -133,7 +148,6 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* CTA WhatsApp abajo */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

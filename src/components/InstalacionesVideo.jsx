@@ -6,37 +6,37 @@ const VIDEOS = [
     id: 1,
     title: 'Nuestras Instalaciones',
     desc: 'Conoce los espacios donde el arte cobra vida.',
-    src: '/videos/IMG_0465.MOV',
+    src: '/videos/Tour%20academia.mp4',
   },
   {
     id: 2,
     title: 'X Academy en acción',
     desc: 'Momentos reales dentro de nuestras clases.',
-    src: '/videos/IMG_8629.MOV',
+    src: '/videos/Explicitus%20festival.MOV',
   },
   {
     id: 3,
     title: 'Talento en escena',
     desc: 'Nuestros estudiantes dando lo mejor de sí.',
-    src: '/videos/IMG_8888.MOV',
+    src: '/videos/Teatro%20musical.MOV',
   },
   {
     id: 4,
     title: 'Arte y movimiento',
     desc: 'La pasión que nos mueve cada día.',
-    src: '/videos/IMG_9513.MOV',
+    src: '/videos/Tour%20academia.mp4',
   },
   {
     id: 5,
     title: 'Detrás de escena',
     desc: 'La magia que ocurre antes de cada presentación.',
-    src: '/videos/IMG_7308.MOV',
+    src: '/videos/Explicitus%20festival.MOV',
   },
   {
     id: 6,
     title: 'Ensayo en vivo',
     desc: 'Disciplina y pasión en cada práctica.',
-    src: '/videos/IMG_7393.MOV',
+    src: '/videos/Teatro%20musical.MOV',
   },
 ];
 
