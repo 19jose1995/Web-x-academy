@@ -7,18 +7,21 @@ const VIDEOS = [
     title: 'Nuestras Instalaciones',
     desc: 'Conoce los espacios donde el arte cobra vida.',
     src: '/videos/Tour%20academia.mp4',
+    poster: '/DSC_0266.jpg.jpeg',
   },
   {
     id: 2,
     title: 'X Academy en acción',
     desc: 'Momentos reales dentro de nuestras clases.',
     src: '/videos/Explicitus%20festival.MOV',
+    poster: '/DSC_0671.jpg.jpeg',
   },
   {
     id: 3,
     title: 'Talento en escena',
     desc: 'Nuestros estudiantes dando lo mejor de sí.',
     src: '/videos/Teatro%20musical.MOV',
+    poster: '/DSC_0705.jpg.jpeg',
   },
 ];
 
@@ -176,6 +179,7 @@ function FeedCard({ video, index, onPlay }) {
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
         src={video.src}
+        poster={video.poster}
         autoPlay
         muted
         loop

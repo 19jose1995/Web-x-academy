@@ -203,7 +203,7 @@ export default function Home() {
         <video
           className="absolute inset-0 h-full w-full object-cover"
           autoPlay muted loop playsInline preload="metadata"
-          poster="/final.png"
+          poster="/DSC_0087.jpg.jpeg"
         >
           <source src="/videos/IMG_4884.MOV" type="video/mp4" />
         </video>

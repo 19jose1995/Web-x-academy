@@ -5,7 +5,6 @@ const PREVIEW = [
   '/DSC_0040.jpg.jpeg',
   '/DSC_0110.jpg.jpeg',
   '/DSC_0247.jpg.jpeg',
-  '/DSC_0322.jpg.jpeg',
   '/DSC_0441.jpg.jpeg',
   '/DSC_0671.jpg.jpeg',
 ];
@@ -38,7 +37,7 @@ export default function Gallery() {
           </span>
         </div>
 
-        {/* Grid: primera foto alta (row-span-2) + 4 normales + 1 con overlay CTA */}
+        {/* Grid: primera foto alta (row-span-2) + 3 normales + 1 con overlay CTA */}
         <div
           data-aos="fade-up"
           data-aos-delay="100"
@@ -61,7 +60,7 @@ export default function Gallery() {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-300" />
-              {i === 5 && (
+              {i === PREVIEW.length - 1 && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/50">
                   <span className="text-white font-bold text-sm tracking-wide">Ver todas →</span>
                 </div>
