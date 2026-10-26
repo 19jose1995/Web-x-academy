@@ -3,7 +3,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Music2, Mic2, Theater } from "lucide-react";
+import { Music2, Mic2, Theater, MapPin, Clock, Phone, Mail, Instagram } from "lucide-react";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -70,7 +70,7 @@ const HORARIOS = [
   { title: "Ballet 1",                       lines: ["Lun/Mié: 4:30–5:30 PM", "Sáb: 4:30–5:30 PM"],                                              cat: "danza"   },
   { title: "Danza Contempo 1",               lines: ["Lun/Mié: 5:30–6:30 PM"],                                                                     cat: "danza"   },
   { title: "Danza Contempo 2",               lines: ["Mar/Jue: 5:30–6:30 PM"],                                                                     cat: "danza"   },
-  { title: "Danza Contempo 3",               lines: ["Sáb: 10:00–11:30 PM"],                                                                       cat: "danza"   },
+  { title: "Danza Contempo 3",               lines: ["Sáb: 10:00–11:30 AM"],                                                                       cat: "danza"   },
   { title: "Ballet Adultos",                 lines: ["Lun/Mié: 7:00–8:00 PM"],                                                                     cat: "danza"   },
   { title: "Heels",                          lines: ["Miércoles: 6:00–7:30 PM"],                                                                   cat: "danza"   },
   { title: "Salsa Básica",                   lines: ["Mar/Jue: 7:00–8:00 PM", "Viernes: 6:30–8:00 PM"],                                           cat: "danza"   },
@@ -78,7 +78,6 @@ const HORARIOS = [
   { title: "Hip Hop Kids",                   lines: ["Mar/Jue: 4:30–5:30 PM"],                                                                     cat: "danza"   },
   { title: "Hip Hop Teens",                  lines: ["Mar/Jue: 5:30–6:30 PM"],                                                                     cat: "danza"   },
   { title: "Hip Hop Adultos",                lines: ["Mar/Jue: 6:30–7:30 PM"],                                                                     cat: "danza"   },
-  { title: "Movimiento creativo",            lines: ["Lun/Mar/Mié/Jue: 3:30–4:30 PM", "Viernes: 3:30–5:00 PM", "Sáb: 9:30–11:00 AM"],            cat: "danza"   },
   { title: "Jazz Teen +",                    lines: ["Mar/Jue: 4:30–5:30 PM"],                                                                     cat: "danza"   },
   { title: "Canto kids",                     lines: ["Viernes: 3:30–4:30 PM"],                                                                     cat: "canto"   },
   { title: "Canto teens",                    lines: ["Viernes: 4:30–5:30 PM"],                                                                     cat: "canto"   },
@@ -109,7 +108,7 @@ function GrupoAcordeon({ grupo }) {
         onClick={() => setOpen(v => !v)}
         className="w-full flex items-center gap-3 px-5 py-4 text-left"
       >
-        <span className="text-lg">{grupo.icon}</span>
+        <span className="h-2.5 w-2.5 rounded-full shrink-0" style={{ background: grupo.color }} />
         <span className="font-bold text-white flex-1">{grupo.label}</span>
         <span className="text-xs text-white/30 mr-2">{grupo.clases.length} clases</span>
         <motion.span
@@ -147,7 +146,7 @@ function GrupoAcordeon({ grupo }) {
 }
 
 /* ─── CONTADOR ──────────────────────────────────────────────────── */
-function CountStat({ value, label, icon }) {
+function CountStat({ value, label }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   return (
@@ -158,7 +157,6 @@ function CountStat({ value, label, icon }) {
       transition={{ duration: 0.6 }}
       className="flex flex-col items-center gap-1"
     >
-      <span className="text-3xl">{icon}</span>
       <span className="text-4xl sm:text-5xl font-extrabold text-white">{value}</span>
       <span className="text-sm font-medium text-white/60 tracking-wide uppercase">{label}</span>
     </motion.div>
@@ -330,7 +328,7 @@ export default function Home() {
                 className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition shadow-md"
                 style={{ background: d.color }}
               >
-                {d.emoji} {d.label}
+                {d.label}
               </motion.a>
             ))}
           </div>
@@ -410,13 +408,13 @@ export default function Home() {
 
             <div className="mt-6 space-y-4 text-sm divide-y divide-slate-100">
               {[
-                { icon: "📍", label: "Dirección",  color: "#5568A9", value: "Club Arroyo Hondo, Calle Dr. José Antonio Polanco Billini 10" },
-                { icon: "🕐", label: "Horario",    color: "#5568A9", value: "Lun–Vie: 2:00 PM – 9:00 PM\nSáb: 9:00 AM – 1:00 PM\nDom: Cerrado" },
-                { icon: "📞", label: "Teléfono",   color: "#ec1763", value: "+1 (809) 381-5369" },
-                { icon: "✉️", label: "Email",      color: "#f37826", value: "info@xacademy.com.do" },
-              ].map(({ icon, label, color, value }) => (
+                { icon: MapPin, label: "Dirección",  color: "#5568A9", value: "Club Arroyo Hondo, Calle Dr. José Antonio Polanco Billini 10" },
+                { icon: Clock, label: "Horario",    color: "#5568A9", value: "Lun–Vie: 2:00 PM – 9:00 PM\nSáb: 9:00 AM – 1:00 PM\nDom: Cerrado" },
+                { icon: Phone, label: "Teléfono",   color: "#ec1763", value: "+1 (809) 381-5369" },
+                { icon: Mail, label: "Email",      color: "#f37826", value: "info@xacademy.com.do" },
+              ].map(({ icon: Icon, label, color, value }) => (
                 <div key={label} className="flex gap-3 pt-4 first:pt-0">
-                  <span className="text-xl shrink-0">{icon}</span>
+                  <Icon size={20} strokeWidth={1.75} className="shrink-0 mt-0.5" style={{ color }} />
                   <div>
                     <div className="font-bold text-xs tracking-wide uppercase" style={{ color }}>{label}</div>
                     <div className="text-slate-600 whitespace-pre-line mt-0.5">{value}</div>
@@ -441,7 +439,7 @@ export default function Home() {
             <div className="relative flex flex-col justify-between h-full p-8 flex-1">
               <div>
                 <span className="inline-block rounded-full bg-white/15 backdrop-blur-sm border border-white/20 px-3 py-1 text-xs font-semibold text-white/80 mb-4">
-                  📍 Arroyo Hondo · Santo Domingo
+                  Arroyo Hondo · Santo Domingo
                 </span>
                 <h3 className="text-4xl font-black text-white leading-tight drop-shadow-lg">
                   X Academy<br />
@@ -460,7 +458,7 @@ export default function Home() {
                   </a>
                   <a href="https://instagram.com/xacademyarts" target="_blank" rel="noreferrer"
                     className="flex items-center gap-2 rounded-full bg-white/15 backdrop-blur-sm px-5 py-2.5 text-sm font-bold text-white border border-white/25 transition hover:scale-105 hover:bg-white/25">
-                    📸 Instagram
+                    <Instagram size={16} /> Instagram
                   </a>
                 </div>
               </div>

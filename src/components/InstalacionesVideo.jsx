@@ -20,24 +20,6 @@ const VIDEOS = [
     desc: 'Nuestros estudiantes dando lo mejor de sí.',
     src: '/videos/Teatro%20musical.MOV',
   },
-  {
-    id: 4,
-    title: 'Arte y movimiento',
-    desc: 'La pasión que nos mueve cada día.',
-    src: '/videos/Tour%20academia.mp4',
-  },
-  {
-    id: 5,
-    title: 'Detrás de escena',
-    desc: 'La magia que ocurre antes de cada presentación.',
-    src: '/videos/Explicitus%20festival.MOV',
-  },
-  {
-    id: 6,
-    title: 'Ensayo en vivo',
-    desc: 'Disciplina y pasión en cada práctica.',
-    src: '/videos/Teatro%20musical.MOV',
-  },
 ];
 
 export default function InstalacionesVideo() {
@@ -90,7 +72,7 @@ export default function InstalacionesVideo() {
             </a>
           </div>
 
-          {/* Grid de 6 videos — estilo feed Instagram */}
+          {/* Grid de videos — estilo feed Instagram */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-0.5">
             {VIDEOS.map((v, i) => (
               <FeedCard key={v.id} video={v} index={i} onPlay={() => setActive(v)} />
@@ -105,7 +87,7 @@ export default function InstalacionesVideo() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-105"
             >
-              📸 Ver más en Instagram
+              Ver más en Instagram →
             </a>
           </div>
         </div>

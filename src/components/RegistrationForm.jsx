@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CheckCircle2, Check } from 'lucide-react';
 
 const classOptions = [
   'Open Class Especial',
@@ -29,11 +30,11 @@ function getAge(dob) {
   return new Date(diff).getUTCFullYear() - 1970;
 }
 
-function Field({ label, icon, children }) {
+function Field({ label, children }) {
   return (
     <div className="flex flex-col gap-1.5">
       <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 uppercase tracking-wide">
-        <span>{icon}</span> {label}
+        {label}
       </label>
       {children}
     </div>
@@ -104,14 +105,14 @@ export default function RegistrationForm({ initialSelection }) {
 
             <ul className="space-y-3 text-sm text-white/80">
               {[
-                '🎓 Maestros certificados y con experiencia escénica',
-                '🎭 Danza, canto y teatro para todas las edades',
-                '📅 Horarios flexibles entre semana y fines de semana',
-                '🏆 Presentaciones y eventos durante el año',
+                'Maestros certificados y con experiencia escénica',
+                'Danza, canto y teatro para todas las edades',
+                'Horarios flexibles entre semana y fines de semana',
+                'Presentaciones y eventos durante el año',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2">
-                  <span>{item.slice(0, 2)}</span>
-                  <span>{item.slice(3)}</span>
+                  <Check size={16} strokeWidth={2.5} className="mt-0.5 shrink-0 text-[#cdd629]" />
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
@@ -131,7 +132,7 @@ export default function RegistrationForm({ initialSelection }) {
                   animate={{ opacity: 1, scale: 1 }}
                   className="flex flex-col items-center justify-center text-center py-12 gap-4"
                 >
-                  <div className="text-5xl">🎉</div>
+                  <CheckCircle2 size={52} strokeWidth={1.5} className="text-[#ec1763]" />
                   <h3 className="text-2xl font-extrabold text-slate-800">¡Registro enviado!</h3>
                   <p className="text-slate-500 text-sm max-w-xs">
                     Gracias por tu interés. Nos pondremos en contacto contigo pronto.
@@ -155,11 +156,11 @@ export default function RegistrationForm({ initialSelection }) {
                 >
                   {/* Nombre + Fecha */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Field label="Nombre completo" icon="👤">
+                    <Field label="Nombre completo">
                       <input name="name" type="text" placeholder="Ej. María López"
                         className={inputCls} required value={form.name} onChange={handleChange} />
                     </Field>
-                    <Field label="Fecha de nacimiento" icon="🎂">
+                    <Field label="Fecha de nacimiento">
                       <input name="birthday" type="date"
                         className={inputCls} required value={form.birthday} onChange={handleChange} />
                     </Field>
@@ -175,7 +176,7 @@ export default function RegistrationForm({ initialSelection }) {
                         transition={{ duration: 0.25 }}
                         className="overflow-hidden"
                       >
-                        <Field label="Tutor legal" icon="🧑‍🤝‍🧑">
+                        <Field label="Tutor legal">
                           <input name="guardian" type="text" placeholder="Nombre del tutor o representante"
                             className={inputCls} required value={form.guardian} onChange={handleChange} />
                         </Field>
@@ -185,11 +186,11 @@ export default function RegistrationForm({ initialSelection }) {
 
                   {/* Email + Teléfono */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Field label="Correo electrónico" icon="✉️">
+                    <Field label="Correo electrónico">
                       <input name="email" type="email" placeholder="correo@ejemplo.com"
                         className={inputCls} required value={form.email} onChange={handleChange} />
                     </Field>
-                    <Field label="Teléfono" icon="📞">
+                    <Field label="Teléfono">
                       <input name="phone" type="tel" placeholder="809-000-0000"
                         pattern="\d{7,15}" title="Introduce entre 7 y 15 dígitos"
                         className={inputCls} required value={form.phone} onChange={handleChange} />
@@ -197,7 +198,7 @@ export default function RegistrationForm({ initialSelection }) {
                   </div>
 
                   {/* Clase */}
-                  <Field label="Clase de interés" icon="🎭">
+                  <Field label="Clase de interés">
                     <select name="class" className={inputCls} required value={form.class} onChange={handleChange}>
                       <option value="" disabled>Selecciona una clase</option>
                       {classOptions.map((opt) => (
@@ -207,7 +208,7 @@ export default function RegistrationForm({ initialSelection }) {
                   </Field>
 
                   {/* Áreas adicionales */}
-                  <Field label="Comentarios o áreas de interés" icon="💬">
+                  <Field label="Comentarios o áreas de interés">
                     <textarea name="areas" rows={3} placeholder="Cuéntanos más sobre lo que buscas..."
                       className={inputCls + ' resize-none'} value={form.areas} onChange={handleChange} />
                   </Field>

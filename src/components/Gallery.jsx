@@ -34,7 +34,7 @@ export default function Gallery() {
 
         <div className="mb-6" data-aos="fade-up" data-aos-delay="50">
           <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-1.5 text-xs font-semibold text-slate-500">
-            📸 La Vida es un Musical · 2026
+            La Vida es un Musical · 2026
           </span>
         </div>
 
@@ -83,7 +83,7 @@ export default function Gallery() {
             rel="noreferrer"
             className="ml-auto inline-flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-slate-600 transition"
           >
-            📸 Seguir en Instagram
+            Seguir en Instagram →
           </a>
         </div>
       </div>
