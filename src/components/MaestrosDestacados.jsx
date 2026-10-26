@@ -3,56 +3,56 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const maestros = [
   {
-    src: '/Isabel.jpg',
+    src: '/Isabel.webp',
     name: 'Isabel Martínez',
     role: 'Directora Artística',
     color: '#ec1763',
     resumen: 'Isabel Martínez es bailarina, coreógrafa, docente y gestora cultural con más de 20 años en la danza. Inició su formación a los 3 años y la formalizó graduándose de la Escuela Nacional de danza (ENDANZA) en el 2017 y hoy es directora y fundadora de X Academy y de la compañía Explicitus, con la cual ha creado piezas reconocidas como Her Crown, Juanita y Work to Do, obra con la que ganó el primer lugar como coreógrafa en los Premios Clara Elena Ramírez y fue nominada a los Premios Soberano.',
   },
   {
-    src: '/Yngrid.jpg',
+    src: '/Yngrid.webp',
     name: 'Yngrid Canela',
     role: 'Hip Hop',
     color: '#5568A9',
     resumen: 'Yngrid Canela, Licenciada en Negocios Internacionales. Apasionada de las artes, coreógrafa, bailarina, maestra y actriz. Desde los 13 años en los estudios de las artes. Ha sido coreógrafa de espectáculos como Premios Heat y coreografiado conciertos y artistas dominicanos. Actualmente es coreógrafa de la compañía de danza contemporánea Explicitus.',
   },
   {
-    src: '/Melody.jpg',
+    src: '/Melody.webp',
     name: 'Melody Santelises',
     role: 'Heels',
     color: '#f37826',
     resumen: 'Melody Ysatis Santelises Graciano es una bailarina, actriz, cantante y gimnasta dominicana. Inició su formación a los 6 años en el Articentro de Danza Miriam Bello, y más adelante obtuvo una beca en la Escuela Nacional de Danza, donde se graduó tras 10 años en la mención Contemporáneo-Folklore. Es Licenciada en Interpretación y Coreografía de la Danza por la Universidad Rey Juan Carlos en Madrid.',
   },
   {
-    src: '/Cristian.jpg',
+    src: '/Cristian.webp',
     name: 'Cristian Hazin',
     role: 'Danza Contemporánea',
     color: '#cdd629',
     resumen: 'Cristian Omar Hazin Garrido, bailarín profesional, coreógrafo y maestro. Inició su formación en Balleteatro Dominicano, años después ingresó al Conservatorio Nacional de Danza, llegando a formar parte de la compañía juvenil. Licenciado en Coreografía e Interpretación de la Danza por el Instituto de Danza Alicia Alonso en la Universidad Rey Juan Carlos, Madrid, España.',
   },
   {
-    src: '/Sofia.jpg',
+    src: '/Sofia.webp',
     name: 'Sofia Martinez',
     role: 'Movimiento Creativo',
     color: '#ec1763',
     resumen: 'Sofía Martínez es egresada de la Escuela Nacional de Danza (END) en la mención Clásico-Contemporáneo. A lo largo de su formación y carrera ha desarrollado una técnica sólida y una fuerte presencia escénica. Actualmente forma parte del Ballet Concierto Dominicano de la Compañía Explicitus.',
   },
   {
-    src: '/Genesis.jpg',
+    src: '/Genesis.webp',
     name: 'Genesis Brito',
     role: 'Teatro Musical',
     color: '#5568A9',
     resumen: 'Génesis Brito es actriz y bailarina, y actualmente se desempeña como bailarina principal de la compañía de danza contemporánea Explicitus. Es egresada de la Academia de Formación Artística (AFA) y tiene una Licenciatura en Teatro, mención Actuación, en la UASD.',
   },
   {
-    src: '/Isaura.jpg',
+    src: '/Isaura.webp',
     name: 'Isaura Abreu',
     role: 'Movimiento Creativo & Pre Ballet',
     color: '#f37826',
     resumen: 'Alba Isaura es una joven bailarina dominicana, graduada en 2024 del Bachillerato Técnico en Artes, mención Danza. Actualmente forma parte de la compañía de danza contemporánea Explicitus. Se especializa en danza clásica y contemporánea, y también se desempeña como docente.',
   },
   {
-    src: '/Paola.jpeg',
+    src: '/Paola.webp',
     name: 'Paola Prado',
     role: 'Canto',
     color: '#ec1763',
@@ -174,6 +174,8 @@ function TeacherCard({ m, i, onClick }) {
       <img
         src={m.src}
         alt={m.name}
+        loading="lazy"
+        decoding="async"
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
       />
 

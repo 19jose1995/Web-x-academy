@@ -43,7 +43,7 @@ const schedules = [
 
 const instructors = [
   {
-    src: '/Cristian.jpg',
+    src: '/Cristian.webp',
     name: 'Cristian Hazin',
     role: 'Danza Contemporánea',
     color: '#cdd629',

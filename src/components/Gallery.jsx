@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const PREVIEW = [
-  '/DSC_0040.jpg.jpeg',
-  '/DSC_0110.jpg.jpeg',
-  '/DSC_0247.jpg.jpeg',
-  '/DSC_0441.jpg.jpeg',
-  '/DSC_0671.jpg.jpeg',
+  '/DSC_0040.webp',
+  '/DSC_0110.webp',
+  '/DSC_0247.webp',
+  '/DSC_0441.webp',
+  '/DSC_0671.webp',
 ];
 
 export default function Gallery() {

@@ -41,7 +41,7 @@ const schedules = [
 
 const instructors = [
   {
-    src: '/Yngrid.jpg',
+    src: '/Yngrid.webp',
     name: 'Yngrid Canela',
     role: 'Hip Hop · Coreógrafa',
     color: '#f37826',

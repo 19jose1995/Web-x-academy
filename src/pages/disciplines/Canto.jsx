@@ -39,7 +39,7 @@ const schedules = [
 
 const instructors = [
   {
-    src: '/Paola.jpeg',
+    src: '/Paola.webp',
     name: 'Paola Prado',
     role: 'Vocal Coach · Canto',
     color: '#ec1763',

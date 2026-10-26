@@ -40,7 +40,7 @@ const schedules = [
 
 const instructors = [
   {
-    src: '/Genesis.jpg',
+    src: '/Genesis.webp',
     name: 'Genesis Brito',
     role: 'Teatro Musical',
     color: '#5568A9',

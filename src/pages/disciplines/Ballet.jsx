@@ -43,14 +43,14 @@ const schedules = [
 
 const instructors = [
   {
-    src: '/Isabel.jpg',
+    src: '/Isabel.webp',
     name: 'Isabel Martínez',
     role: 'Directora Artística · Ballet',
     color: '#ec1763',
     bio: 'Bailarina, coreógrafa y docente con más de 20 años en la danza. Graduada de ENDANZA en 2017, fundadora de X Academy y de la compañía Explicitus. Ganadora del primer lugar en los Premios Clara Elena Ramírez y nominada a los Premios Soberano.',
   },
   {
-    src: '/Isaura.jpg',
+    src: '/Isaura.webp',
     name: 'Isaura Abreu',
     role: 'Movimiento Creativo & Pre Ballet',
     color: '#f37826',

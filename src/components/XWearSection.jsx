@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import LazyVideo from './LazyVideo';
 
 export default function XWearSection() {
   const ref = useRef(null);
@@ -86,13 +87,9 @@ export default function XWearSection() {
 
         {/* ── Columna derecha: video ── */}
         <div className="relative overflow-hidden min-h-[340px] md:min-h-0">
-          <video
+          <LazyVideo
             className="absolute inset-0 w-full h-full object-cover opacity-80"
             src="/videos/X%20wear.MOV"
-            autoPlay
-            muted
-            loop
-            playsInline
           />
           {/* Gradiente de fusión hacia la izquierda */}
           <div

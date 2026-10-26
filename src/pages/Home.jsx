@@ -15,6 +15,7 @@ import MaestrosDestacados from "../components/MaestrosDestacados";
 import InstalacionesVideo from "../components/InstalacionesVideo";
 import ScrollIndicator from "../components/ScrollIndicator";
 import { useSEO } from "../hooks/useSEO";
+import LazyVideo from "../components/LazyVideo";
 
 /* ─── DATOS ─────────────────────────────────────────────────────── */
 
@@ -203,7 +204,7 @@ export default function Home() {
         <video
           className="absolute inset-0 h-full w-full object-cover"
           autoPlay muted loop playsInline preload="metadata"
-          poster="/DSC_0087.jpg.jpeg"
+          poster="/DSC_0087.webp"
         >
           <source src="/videos/IMG_4884.MOV" type="video/mp4" />
         </video>
@@ -429,10 +430,10 @@ export default function Home() {
           </div>
 
           <div data-aos="fade-left" className="relative overflow-hidden rounded-3xl shadow-2xl flex flex-col bg-black min-h-[420px]">
-            <video
+            <LazyVideo
               className="absolute inset-0 w-full h-full object-cover opacity-70"
               src="/videos/Tour%20academia.mp4"
-              autoPlay muted loop playsInline
+              poster="/DSC_0266.webp"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 

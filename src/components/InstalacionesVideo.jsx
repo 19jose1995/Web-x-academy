@@ -1,5 +1,6 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import LazyVideo from './LazyVideo';
 
 const VIDEOS = [
   {
@@ -7,21 +8,21 @@ const VIDEOS = [
     title: 'Nuestras Instalaciones',
     desc: 'Conoce los espacios donde el arte cobra vida.',
     src: '/videos/Tour%20academia.mp4',
-    poster: '/DSC_0266.jpg.jpeg',
+    poster: '/DSC_0266.webp',
   },
   {
     id: 2,
     title: 'X Academy en acción',
     desc: 'Momentos reales dentro de nuestras clases.',
     src: '/videos/Explicitus%20festival.MOV',
-    poster: '/DSC_0671.jpg.jpeg',
+    poster: '/DSC_0671.webp',
   },
   {
     id: 3,
     title: 'Talento en escena',
     desc: 'Nuestros estudiantes dando lo mejor de sí.',
     src: '/videos/Teatro%20musical.MOV',
-    poster: '/DSC_0705.jpg.jpeg',
+    poster: '/DSC_0705.webp',
   },
 ];
 
@@ -160,7 +161,6 @@ export default function InstalacionesVideo() {
 
 /* ── Tarjeta del feed (video autoreproducido sin audio) ── */
 function FeedCard({ video, index, onPlay }) {
-  const videoRef = useRef(null);
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -175,16 +175,10 @@ function FeedCard({ video, index, onPlay }) {
       onClick={onPlay}
     >
       {/* Video silencioso en loop */}
-      <video
-        ref={videoRef}
+      <LazyVideo
         className="absolute inset-0 w-full h-full object-cover"
         src={video.src}
         poster={video.poster}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
       />
 
       {/* Overlay en hover */}
