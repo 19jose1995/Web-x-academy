@@ -36,6 +36,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://xacademy.com.do/xwear</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://xacademy.com.do/blog</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
