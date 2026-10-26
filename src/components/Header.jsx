@@ -6,10 +6,12 @@ const NAV = [
   { label: 'Maestros', href: '/#maestros', hash: '#maestros' },
   { label: 'Horarios', href: '/#horarios', hash: '#horarios' },
   { label: 'Galería',  href: '/#galeria',  hash: '#galeria' },
+  { label: 'X Wear',   href: '/xwear' },
   { label: 'Registro', href: '/#registro', hash: '#registro' },
 ];
 
 function smoothScrollTo(hash) {
+  if (!hash) return false;
   const el = document.querySelector(hash);
   if (!el) return false;
   const offset = 72;
