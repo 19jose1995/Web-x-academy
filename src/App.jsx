@@ -9,12 +9,14 @@ import ComoElegirPrimeraClaseBallet from './pages/blog/ComoElegirPrimeraClaseBal
 import BeneficiosDanzaNinos from './pages/blog/BeneficiosDanzaNinos';
 import BlogIndex from './pages/blog/BlogIndex';
 import Galeria from './pages/Galeria';
+import XWear from './pages/XWear';
 
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/galeria" element={<Galeria />} />
+      <Route path="/xwear" element={<XWear />} />
       <Route path="/ballet" element={<Ballet />} />
       <Route path="/hip-hop" element={<HipHop />} />
       <Route path="/danza-contemporanea" element={<DanzaContemporanea />} />

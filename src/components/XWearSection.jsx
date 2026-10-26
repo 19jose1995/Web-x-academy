@@ -75,11 +75,12 @@ export default function XWearSection() {
               <img src="/whatsapp.png" alt="" className="h-4 w-4 brightness-0 invert" />
               Consultar disponibilidad
             </a>
-            <span
-              className="inline-flex items-center justify-center rounded-full border border-white/15 px-7 py-3.5 text-sm font-semibold text-white/40 cursor-default"
+            <a
+              href="/xwear"
+              className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition hover:border-white/60"
             >
-              Tienda online · Próximamente
-            </span>
+              Ver tienda online
+            </a>
           </motion.div>
         </div>
 
