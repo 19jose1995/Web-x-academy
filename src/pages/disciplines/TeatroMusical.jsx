@@ -1,4 +1,5 @@
 import DisciplinaLayout from './DisciplinaLayout';
+import { TEATRO_MUSICAL } from '../../data/horarios';
 
 const about = (
   <>
@@ -33,10 +34,7 @@ const beneficios = [
   { icon: '🧠', title: 'Inteligencia emocional', desc: 'El teatro desarrolla la empatía y la capacidad de comprender distintas perspectivas.' },
 ];
 
-const schedules = [
-  { title: 'Teatro Musical Kids',  lines: ['Viernes: 4:30–5:30 PM'] },
-  { title: 'Teatro Musical Teens', lines: ['Viernes: 3:30–4:30 PM'] },
-];
+const schedules = TEATRO_MUSICAL;
 
 const instructors = [
   {

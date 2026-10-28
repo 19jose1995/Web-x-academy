@@ -1,28 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, Check } from 'lucide-react';
+import { OPCIONES_REGISTRO } from '../data/horarios';
 
-const classOptions = [
-  'Open Class Especial',
-  'Pre Ballet (6 - 8 años)',
-  'Movimiento Creativo (3 - 5 años)',
-  'Ballet 1',
-  'Danza Contempo 1',
-  'Danza Contempo 2',
-  'Danza Contempo 3',
-  'Ballet Adultos',
-  'Heels',
-  'Salsa Básica',
-  'Jazz Kids',
-  'Jazz Teen +',
-  'Hip Hop Kids',
-  'Hip Hop Teens',
-  'Hip Hop Adultos',
-  'Canto Kids',
-  'Canto Teens',
-  'Teatro Musical (Kids)',
-  'Teatro Musical (Teens)',
-];
+const classOptions = OPCIONES_REGISTRO;
 
 function getAge(dob) {
   if (!dob) return null;

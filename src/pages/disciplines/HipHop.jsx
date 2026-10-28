@@ -1,4 +1,5 @@
 import DisciplinaLayout from './DisciplinaLayout';
+import { HEELS, HIP_HOP } from '../../data/horarios';
 
 const about = (
   <>
@@ -33,11 +34,7 @@ const beneficios = [
   { icon: '🏅', title: 'Para todas las edades', desc: 'Clases específicas para Kids, Teens y Adultos con contenidos adaptados a cada grupo.' },
 ];
 
-const schedules = [
-  { title: 'Hip Hop Kids',   lines: ['Mar/Jue: 4:30–5:30 PM'] },
-  { title: 'Hip Hop Teens',  lines: ['Mar/Jue: 5:30–6:30 PM'] },
-  { title: 'Hip Hop Adultos', lines: ['Mar/Jue: 6:30–7:30 PM'] },
-];
+const schedules = [...HIP_HOP, ...HEELS];
 
 const instructors = [
   {

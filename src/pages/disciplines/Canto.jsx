@@ -1,4 +1,5 @@
 import DisciplinaLayout from './DisciplinaLayout';
+import { CANTO } from '../../data/horarios';
 
 const about = (
   <>
@@ -32,10 +33,7 @@ const beneficios = [
   { icon: '🎭', title: 'Preparación para el escenario', desc: 'Formación orientada a presentaciones, musicales, audiciones y espectáculos.' },
 ];
 
-const schedules = [
-  { title: 'Canto Kids',  lines: ['Viernes: 3:30–4:30 PM'] },
-  { title: 'Canto Teens', lines: ['Viernes: 4:30–5:30 PM'] },
-];
+const schedules = CANTO;
 
 const instructors = [
   {

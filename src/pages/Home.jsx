@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { gsap, prefersReducedMotion, scrollToTarget } from "../lib/motion";
 import { useScrollFx } from "../lib/useScrollFx";
 import Marquee from "../components/Marquee";
+import { GRUPOS } from "../data/horarios";
 import { Music2, Mic2, Theater, MapPin, Clock, Phone, Mail, Instagram } from "lucide-react";
 
 import Header from "../components/Header";
@@ -30,14 +31,14 @@ const STATS = [
 const CLASES = [
   {
     title: "Danza",
-    desc: "Ballet, contemporáneo, hip hop, heels, salsa y más. Para todas las edades.",
+    desc: "Ballet, contemporáneo, hip hop, heels y jazz. Desde los 3 años hasta adultos.",
     type: "danza",
     from: "#ec1763",
     to: "#ff6b9d",
     href: "#horarios",
     tag: "danza",
     img: "/DSC_0515.webp",
-    meta: "Ballet · Hip Hop · Contemporáneo · Heels · Jazz · Salsa",
+    meta: "Ballet · Hip Hop · Contemporáneo · Heels · Jazz",
   },
   {
     title: "Canto",
@@ -48,7 +49,7 @@ const CLASES = [
     href: "#horarios",
     tag: "canto",
     img: "/Paola.webp",
-    meta: "Kids · Teens",
+    meta: "Dentro de Teatro Musical · Kids · Teens · Adultos",
   },
   {
     title: "Teatro Musical",
@@ -59,7 +60,7 @@ const CLASES = [
     href: "#horarios",
     tag: "teatro",
     img: "/DSC_0040.webp",
-    meta: "Kids · Teens",
+    meta: "Canto, danza y teatro · Kids · Teens · Adultos",
   },
 ];
 
@@ -69,43 +70,6 @@ const DISCIPLINAS = [
   { label: "Contemporánea",      emoji: "💫", href: "/danza-contemporanea", color: "#5568A9" },
   { label: "Teatro Musical",     emoji: "🎭", href: "/teatro-musical",      color: "#7c8fd4" },
   { label: "Canto",              emoji: "🎵", href: "/canto",               color: "#8fae00" },
-];
-
-const HORARIOS = [
-  { title: "Open Class Especial",            lines: ["Viernes: 7:30PM"],                                                                           featured: true,  cat: "especial" },
-  { title: "Pre Ballet (6 - 8 años)",        lines: ["Lun/Mar/Mié/Jue: 3:30–4:30 PM", "Viernes: 3:30–5:00 PM", "Sáb: 9:30–11:30 AM"],            cat: "danza"   },
-  { title: "Movimiento Creativo (3-5 años)", lines: ["Lun/Mié: 3:30–4:30 PM", "Sáb: 9:30–11:00 AM"],                                             cat: "danza"   },
-  { title: "Ballet 1",                       lines: ["Lun/Mié: 4:30–5:30 PM", "Sáb: 4:30–5:30 PM"],                                              cat: "danza"   },
-  { title: "Danza Contempo 1",               lines: ["Lun/Mié: 5:30–6:30 PM"],                                                                     cat: "danza"   },
-  { title: "Danza Contempo 2",               lines: ["Mar/Jue: 5:30–6:30 PM"],                                                                     cat: "danza"   },
-  { title: "Danza Contempo 3",               lines: ["Sáb: 10:00–11:30 AM"],                                                                       cat: "danza"   },
-  { title: "Ballet Adultos",                 lines: ["Lun/Mié: 7:00–8:00 PM"],                                                                     cat: "danza"   },
-  { title: "Heels",                          lines: ["Miércoles: 6:00–7:30 PM"],                                                                   cat: "danza"   },
-  { title: "Salsa Básica",                   lines: ["Mar/Jue: 7:00–8:00 PM", "Viernes: 6:30–8:00 PM"],                                           cat: "danza"   },
-  { title: "Jazz Kids",                      lines: ["Lun/Mié: 4:30–5:30 PM"],                                                                     cat: "danza"   },
-  { title: "Hip Hop Kids",                   lines: ["Mar/Jue: 4:30–5:30 PM"],                                                                     cat: "danza"   },
-  { title: "Hip Hop Teens",                  lines: ["Mar/Jue: 5:30–6:30 PM"],                                                                     cat: "danza"   },
-  { title: "Hip Hop Adultos",                lines: ["Mar/Jue: 6:30–7:30 PM"],                                                                     cat: "danza"   },
-  { title: "Jazz Teen +",                    lines: ["Mar/Jue: 4:30–5:30 PM"],                                                                     cat: "danza"   },
-  { title: "Canto kids",                     lines: ["Viernes: 3:30–4:30 PM"],                                                                     cat: "canto"   },
-  { title: "Canto teens",                    lines: ["Viernes: 4:30–5:30 PM"],                                                                     cat: "canto"   },
-  { title: "Teatro Musical (Teens)",         lines: ["Viernes: 3:30–4:30 PM"],                                                                     cat: "teatro"  },
-  { title: "Teatro Musical (Kids)",          lines: ["Viernes: 4:30–5:30 PM"],                                                                     cat: "teatro"  },
-];
-
-const GRUPOS = [
-  {
-    id: "danza",  label: "Danza",  icon: "💃", color: "#ec1763",
-    clases: HORARIOS.filter(h => h.cat === "danza"),
-  },
-  {
-    id: "canto",  label: "Canto",  icon: "🎤", color: "#cdd629",
-    clases: HORARIOS.filter(h => h.cat === "canto"),
-  },
-  {
-    id: "teatro", label: "Teatro Musical", icon: "🎭", color: "#5568A9",
-    clases: HORARIOS.filter(h => h.cat === "teatro"),
-  },
 ];
 
 function GrupoAcordeon({ grupo }) {
@@ -138,10 +102,10 @@ function GrupoAcordeon({ grupo }) {
           >
             <div className="px-5 pb-4 divide-y divide-white/5">
               {grupo.clases.map((c) => (
-                <div key={c.title} className="flex items-start justify-between gap-4 py-2.5">
-                  <span className="text-white/80 text-sm font-medium">{c.title}</span>
-                  <span className="text-white/40 text-xs text-right shrink-0 leading-relaxed">
-                    {c.lines.join(" · ")}
+                <div key={c.title} className="flex flex-col gap-1 py-2.5 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                  <span className="text-white/85 text-sm font-medium">{c.title}</span>
+                  <span className="flex flex-col text-white/50 text-xs leading-relaxed sm:text-right">
+                    {c.lines.map((l) => <span key={l}>{l}</span>)}
                   </span>
                 </div>
               ))}

@@ -9,7 +9,7 @@ const ITEMS = [
   { text: "Canto", color: "#ec1763" },
   { text: "Heels", color: "#f37826" },
   { text: "Jazz", color: "#cdd629" },
-  { text: "Salsa", color: "#7c8fd4" },
+  { text: "Baby Ballet", color: "#7c8fd4" },
 ];
 
 function Star({ color }) {
@@ -88,7 +88,7 @@ export default function Marquee() {
   return (
     <section
       ref={root}
-      aria-label="Disciplinas: Ballet, Hip Hop, Contemporáneo, Teatro Musical, Canto, Heels, Jazz y Salsa"
+      aria-label="Disciplinas: Ballet, Hip Hop, Contemporáneo, Teatro Musical, Canto, Heels, Jazz y Baby Ballet"
       className="relative overflow-hidden bg-[#0f0c29] py-6 sm:py-8"
     >
       <div aria-hidden="true" className="select-none space-y-1 text-[2.6rem] font-black uppercase leading-[1.05] tracking-tight sm:text-7xl">

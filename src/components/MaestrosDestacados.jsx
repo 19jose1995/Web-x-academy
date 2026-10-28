@@ -33,7 +33,7 @@ const maestros = [
   {
     src: '/Sofia.webp',
     name: 'Sofia Martinez',
-    role: 'Movimiento Creativo',
+    role: 'Baby Ballet',
     color: '#ec1763',
     resumen: 'Sofía Martínez es egresada de la Escuela Nacional de Danza (END) en la mención Clásico-Contemporáneo. A lo largo de su formación y carrera ha desarrollado una técnica sólida y una fuerte presencia escénica. Actualmente forma parte del Ballet Concierto Dominicano de la Compañía Explicitus.',
   },
@@ -47,7 +47,7 @@ const maestros = [
   {
     src: '/Isaura.webp',
     name: 'Isaura Abreu',
-    role: 'Movimiento Creativo & Pre Ballet',
+    role: 'Baby Ballet & Pre-Ballet',
     color: '#f37826',
     resumen: 'Alba Isaura es una joven bailarina dominicana, graduada en 2024 del Bachillerato Técnico en Artes, mención Danza. Actualmente forma parte de la compañía de danza contemporánea Explicitus. Se especializa en danza clásica y contemporánea, y también se desempeña como docente.',
   },
