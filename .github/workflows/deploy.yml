@@ -1,0 +1,46 @@
+# Compila la web en cada cambio a main y deja el resultado listo en la rama `deploy`.
+# Hostinger (hPanel → Git) descarga esa rama en public_html con el webhook de auto-implementación.
+name: Publicar en Hostinger
+
+on:
+  push:
+    branches: [main, despliegue-hostinger]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      # Archivos del servidor Apache que Vite no copia por sí solo
+      - name: Añadir archivos del servidor
+        run: cp .htaccess send_email.php gracias.html dist/
+
+      # Se suma un commit encima del anterior (sin reescribir historia) para que
+      # el `git pull` de Hostinger siempre avance sin conflictos. La carpeta
+      # `videos` del servidor no está en la rama, así que el pull no la toca.
+      - name: Publicar en la rama deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: deploy
+          publish_dir: ./dist
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_message: "Publicar"

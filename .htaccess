@@ -1,5 +1,7 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    # La carpeta .git que crea el despliegue de Hostinger no debe verse desde la web
+    RewriteRule (^|/)\.git - [F,L]
     RewriteBase /
     RewriteRule ^index\.html$ - [L]
     RewriteCond %{REQUEST_FILENAME} !-f
