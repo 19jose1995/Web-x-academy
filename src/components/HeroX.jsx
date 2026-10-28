@@ -146,7 +146,7 @@ export default function HeroX() {
             autoPlay muted loop playsInline preload="metadata"
             poster="/DSC_0087.webp"
           >
-            <source src="/videos/IMG_4884.MOV" type="video/mp4" />
+            <source src="/videos/IMG_4884.mp4" type="video/mp4" />
           </video>
         </div>
         <div className="absolute inset-0 bg-[#0f0c29]/15" />

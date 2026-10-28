@@ -14,14 +14,14 @@ const VIDEOS = [
     id: 2,
     title: 'X Academy en acción',
     desc: 'Momentos reales dentro de nuestras clases.',
-    src: '/videos/Explicitus%20festival.MOV',
+    src: '/videos/Explicitus%20festival.mp4',
     poster: '/DSC_0671.webp',
   },
   {
     id: 3,
     title: 'Talento en escena',
     desc: 'Nuestros estudiantes dando lo mejor de sí.',
-    src: '/videos/Teatro%20musical.MOV',
+    src: '/videos/Teatro%20musical.mp4',
     poster: '/DSC_0705.webp',
   },
 ];
