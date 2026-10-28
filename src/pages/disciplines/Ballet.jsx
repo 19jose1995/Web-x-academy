@@ -1,4 +1,5 @@
 import DisciplinaLayout from './DisciplinaLayout';
+import { BALLET } from '../../data/horarios';
 
 const about = (
   <>
@@ -10,7 +11,7 @@ const about = (
       diseñadas para cada etapa del desarrollo.
     </p>
     <p>
-      Desde el <em>Movimiento Creativo</em> para niños de 3 a 5 años —donde el juego y la
+      Desde el <em>Baby Ballet</em> para niños de 3 a 5 años —donde el juego y la
       exploración del cuerpo son protagonistas— hasta el <em>Pre-Ballet</em>, el <em>Ballet 1</em>{' '}
       y el <em>Ballet Adultos</em>, cada nivel está pensado para acompañar el crecimiento artístico
       con metodología pedagógica de primer nivel. Nuestras maestras están graduadas de la Escuela
@@ -34,25 +35,20 @@ const beneficios = [
   { icon: '⭐', title: 'Confianza y autoestima', desc: 'Cada logro en el ballet refuerza la seguridad y el amor propio.' },
 ];
 
-const schedules = [
-  { title: 'Movimiento Creativo (3–5 años)', lines: ['Lun/Mié: 3:30–4:30 PM', 'Sáb: 9:30–11:00 AM'] },
-  { title: 'Pre Ballet (6–8 años)',          lines: ['Lun/Mar/Mié/Jue: 3:30–4:30 PM', 'Viernes: 3:30–5:00 PM', 'Sáb: 9:30–11:30 AM'] },
-  { title: 'Ballet 1',                       lines: ['Lun/Mié: 4:30–5:30 PM', 'Sáb: 4:30–5:30 PM'] },
-  { title: 'Ballet Adultos',                 lines: ['Lun/Mié: 7:00–8:00 PM'] },
-];
+const schedules = BALLET;
 
 const instructors = [
   {
-    src: '/Isabel.jpg',
+    src: '/Isabel.webp',
     name: 'Isabel Martínez',
     role: 'Directora Artística · Ballet',
     color: '#ec1763',
     bio: 'Bailarina, coreógrafa y docente con más de 20 años en la danza. Graduada de ENDANZA en 2017, fundadora de X Academy y de la compañía Explicitus. Ganadora del primer lugar en los Premios Clara Elena Ramírez y nominada a los Premios Soberano.',
   },
   {
-    src: '/Isaura.jpg',
+    src: '/Isaura.webp',
     name: 'Isaura Abreu',
-    role: 'Movimiento Creativo & Pre Ballet',
+    role: 'Baby Ballet & Pre-Ballet',
     color: '#f37826',
     bio: 'Graduada del Bachillerato Técnico en Artes, mención Danza (2024). Parte de la compañía Explicitus. Especialista en danza clásica y contemporánea, con vocación pedagógica para los más pequeños.',
   },
@@ -62,7 +58,6 @@ const relatedLinks = [
   { label: 'Hip Hop',          emoji: '🎤', href: '/hip-hop',             color: '#f37826' },
   { label: 'Contemporánea',    emoji: '💫', href: '/danza-contemporanea', color: '#5568A9' },
   { label: 'Teatro Musical',   emoji: '🎭', href: '/teatro-musical',      color: '#7c8fd4' },
-  { label: 'Canto',            emoji: '🎵', href: '/canto',               color: '#8fae00' },
 ];
 
 export default function Ballet() {

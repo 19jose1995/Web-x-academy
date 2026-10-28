@@ -1,4 +1,5 @@
 import DisciplinaLayout from './DisciplinaLayout';
+import { TEATRO_MUSICAL } from '../../data/horarios';
 
 const about = (
   <>
@@ -33,14 +34,11 @@ const beneficios = [
   { icon: '🧠', title: 'Inteligencia emocional', desc: 'El teatro desarrolla la empatía y la capacidad de comprender distintas perspectivas.' },
 ];
 
-const schedules = [
-  { title: 'Teatro Musical Kids',  lines: ['Viernes: 4:30–5:30 PM'] },
-  { title: 'Teatro Musical Teens', lines: ['Viernes: 3:30–4:30 PM'] },
-];
+const schedules = TEATRO_MUSICAL;
 
 const instructors = [
   {
-    src: '/Genesis.jpg',
+    src: '/Genesis.webp',
     name: 'Genesis Brito',
     role: 'Teatro Musical',
     color: '#5568A9',
@@ -52,7 +50,6 @@ const relatedLinks = [
   { label: 'Ballet',          emoji: '🩰', href: '/ballet',              color: '#ec1763' },
   { label: 'Hip Hop',         emoji: '🎤', href: '/hip-hop',             color: '#f37826' },
   { label: 'Contemporánea',   emoji: '💫', href: '/danza-contemporanea', color: '#5568A9' },
-  { label: 'Canto',           emoji: '🎵', href: '/canto',               color: '#8fae00' },
 ];
 
 export default function TeatroMusical() {

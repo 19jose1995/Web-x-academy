@@ -1,7 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { useScrollFx } from '../../lib/useScrollFx';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { useSEO } from '../../hooks/useSEO';
@@ -18,13 +17,14 @@ export default function DisciplinaLayout({
 }) {
   useSEO({ title: seoTitle, description: seoDesc });
 
+  const root = useRef(null);
   useEffect(() => {
-    AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic' });
     window.scrollTo(0, 0);
   }, []);
+  useScrollFx(root, [title]);
 
   return (
-    <div className="min-h-screen font-sans text-slate-900 bg-white">
+    <div ref={root} className="min-h-screen font-sans text-slate-900 bg-white">
       <Header />
 
       {/* ══ HERO ══ */}
@@ -57,14 +57,12 @@ export default function DisciplinaLayout({
 
           <div className="grid md:grid-cols-2 gap-10 items-end">
             <div>
-              <motion.h1
-                initial={{ opacity: 0, y: 32 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="text-5xl sm:text-6xl md:text-7xl font-black text-white leading-[0.95] tracking-tight"
+              <h1
+                data-fx="split"
+                className="text-6xl sm:text-7xl md:text-8xl font-black text-white leading-[0.92] tracking-tight"
               >
                 {title}
-              </motion.h1>
+              </h1>
               <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
@@ -109,7 +107,7 @@ export default function DisciplinaLayout({
           {instructors.map((m, i) => (
             <div
               key={m.name}
-              data-aos="fade-up"
+              data-fx="up"
               className={`grid md:grid-cols-2 gap-10 items-center ${i > 0 ? 'mt-16 pt-16 border-t border-slate-100' : ''}`}
             >
               {/* Foto */}
@@ -117,6 +115,8 @@ export default function DisciplinaLayout({
                 <img
                   src={m.src}
                   alt={m.name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-top"
                 />
                 <div
@@ -151,7 +151,7 @@ export default function DisciplinaLayout({
       >
         <div className="mx-auto max-w-4xl">
           <div className="grid md:grid-cols-[1fr_2fr] gap-10 items-start">
-            <div data-aos="fade-right">
+            <div data-fx="up">
               <div
                 className="h-px w-12 mb-6"
                 style={{ background: `linear-gradient(90deg, ${from}, ${to})` }}
@@ -160,7 +160,7 @@ export default function DisciplinaLayout({
                 Sobre el {title}
               </h2>
             </div>
-            <div data-aos="fade-left" className="text-white/65 text-base sm:text-lg leading-relaxed space-y-4">
+            <div data-fx="up" className="text-white/65 text-base sm:text-lg leading-relaxed space-y-4">
               {about}
             </div>
           </div>
@@ -169,19 +169,18 @@ export default function DisciplinaLayout({
 
       {/* ══ HORARIOS ══ */}
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <div data-aos="fade-up" className="mb-10">
+        <div data-fx="up" className="mb-10">
           <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: from }}>
             Club Arroyo Hondo · Santo Domingo
           </p>
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-800">Horarios</h2>
+          <h2 data-fx="split" className="text-4xl sm:text-5xl font-black text-slate-800">Horarios</h2>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
           {schedules.map((s, i) => (
             <div
               key={i}
-              data-aos="fade-up"
-              data-aos-delay={i * 60}
+              data-fx="up"
               className="group rounded-2xl border border-slate-100 p-5 hover:border-transparent transition-all duration-300 hover:shadow-xl"
               style={{ '--hover-bg': `${from}10` }}
               onMouseEnter={e => e.currentTarget.style.background = `${from}08`}
@@ -204,7 +203,7 @@ export default function DisciplinaLayout({
           ))}
         </div>
 
-        <div data-aos="fade-up" className="mt-10">
+        <div data-fx="up" className="mt-10">
           <a
             href="https://wa.me/18093815369"
             target="_blank"
@@ -234,7 +233,7 @@ export default function DisciplinaLayout({
                   className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition hover:scale-105 hover:shadow-lg"
                   style={{ background: link.color }}
                 >
-                  {link.emoji} {link.label}
+                  {link.label}
                 </a>
               ))}
             </div>

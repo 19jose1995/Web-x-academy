@@ -1,4 +1,5 @@
 import DisciplinaLayout from './DisciplinaLayout';
+import { HEELS, HIP_HOP } from '../../data/horarios';
 
 const about = (
   <>
@@ -33,15 +34,11 @@ const beneficios = [
   { icon: '🏅', title: 'Para todas las edades', desc: 'Clases específicas para Kids, Teens y Adultos con contenidos adaptados a cada grupo.' },
 ];
 
-const schedules = [
-  { title: 'Hip Hop Kids',   lines: ['Mar/Jue: 4:30–5:30 PM'] },
-  { title: 'Hip Hop Teens',  lines: ['Mar/Jue: 5:30–6:30 PM'] },
-  { title: 'Hip Hop Adultos', lines: ['Mar/Jue: 6:30–7:30 PM'] },
-];
+const schedules = [...HIP_HOP, ...HEELS];
 
 const instructors = [
   {
-    src: '/Yngrid.jpg',
+    src: '/Yngrid.webp',
     name: 'Yngrid Canela',
     role: 'Hip Hop · Coreógrafa',
     color: '#f37826',
@@ -53,7 +50,6 @@ const relatedLinks = [
   { label: 'Ballet',          emoji: '🩰', href: '/ballet',              color: '#ec1763' },
   { label: 'Contemporánea',   emoji: '💫', href: '/danza-contemporanea', color: '#5568A9' },
   { label: 'Teatro Musical',  emoji: '🎭', href: '/teatro-musical',      color: '#7c8fd4' },
-  { label: 'Canto',           emoji: '🎵', href: '/canto',               color: '#8fae00' },
 ];
 
 export default function HipHop() {

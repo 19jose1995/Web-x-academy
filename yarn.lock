@@ -168,10 +168,10 @@
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.27.1"
 
-"@esbuild/win32-x64@0.25.3":
+"@esbuild/linux-x64@0.25.3":
   version "0.25.3"
-  resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.25.3.tgz"
-  integrity sha512-ICgUR+kPimx0vvRzf+N/7L7tVSQeE3BYY+NhHRHXS1kBuPO7z2+7ea2HbhDyZdTephgvNvKrlDDKUexuCVBVvg==
+  resolved "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.25.3.tgz"
+  integrity sha512-nQHDz4pXjSDC6UfOE1Fw9Q8d6GCAd9KdvMZpfVGWSJztYCarRgSDfOVBY5xwhQXseiyxapkiSJi/5/ja8mRFFA==
 
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.6.1"
@@ -383,10 +383,15 @@
   resolved "https://registry.npmjs.org/@react-leaflet/core/-/core-3.0.0.tgz"
   integrity sha512-3EWmekh4Nz+pGcr+xjf0KNyYfC3U2JjnkWsh0zcqaexYqmmB5ZhH37kz41JXGmKzpaMZCnPofBBm64i+YrEvGQ==
 
-"@rollup/rollup-win32-x64-msvc@4.40.1":
+"@rollup/rollup-linux-x64-gnu@4.40.1":
   version "4.40.1"
-  resolved "https://registry.npmjs.org/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.40.1.tgz"
-  integrity sha512-ECyOuDeH3C1I8jH2MK1RtBJW+YPMvSfT0a5NN0nHfQYnDSJ6tUiZH3gzwVP5/Kfh/+Tt7tpWVF9LXNTnhTJ3kA==
+  resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.40.1.tgz"
+  integrity sha512-XiK5z70PEFEFqcNj3/zRSz/qX4bp4QIraTy9QjwJAb/Z8GM7kVUsD0Uk8maIPeTyPCP03ChdI+VVmJriKYbRHQ==
+
+"@rollup/rollup-linux-x64-musl@4.40.1":
+  version "4.40.1"
+  resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.40.1.tgz"
+  integrity sha512-2BRORitq5rQ4Da9blVovzNCMaUlyKrzMSvkVR0D4qPuOy/+pMCrh1d7o01RATwVy+6Fa1WBw+da7QPeLWU/1mQ==
 
 "@tinyhttp/accepts@2.2.3":
   version "2.2.3"
@@ -1200,6 +1205,11 @@ globals@^16.0.0:
   resolved "https://registry.npmjs.org/globals/-/globals-16.0.0.tgz"
   integrity sha512-iInW14XItCXET01CQFqudPOWP2jYMl7T+QRQT+UNcR/iQncN/F0UNpgd76iFkBPgNQb4+X3LV9tLJYzwh+Gl3A==
 
+gsap@^3.13.0:
+  version "3.13.0"
+  resolved "https://registry.npmjs.org/gsap/-/gsap-3.13.0.tgz"
+  integrity sha512-QL7MJ2WMjm1PHWsoFrAQH/J8wUeqZvMtHO58qdekHpCfhvhSL4gSiz6vJf5EeMP0LOn3ZCprL2ki/gjED8ghVw==
+
 has-flag@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/has-flag/-/has-flag-4.0.0.tgz"
@@ -1380,6 +1390,11 @@ leaflet@^1.9.0, leaflet@^1.9.4:
   resolved "https://registry.npmjs.org/leaflet/-/leaflet-1.9.4.tgz"
   integrity sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==
 
+lenis@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npmjs.org/lenis/-/lenis-1.3.4.tgz"
+  integrity sha512-WIGk8wiV2ABm/T7M+NC+tAV8fjzNJD1J4z11aZ3mTtx7WAZX/4QdCNhBO0g/TqXISA+/3hTbzrPC4FW1nhoNMQ==
+
 levn@^0.4.1:
   version "0.4.1"
   resolved "https://registry.npmjs.org/levn/-/levn-0.4.1.tgz"
@@ -1445,6 +1460,11 @@ lru-cache@^5.1.1:
   integrity sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==
   dependencies:
     yallist "^3.0.2"
+
+lucide-react@^0.577.0:
+  version "0.577.0"
+  resolved "https://registry.npmjs.org/lucide-react/-/lucide-react-0.577.0.tgz"
+  integrity sha512-4LjoFv2eEPwYDPg/CUdBJQSDfPyzXCRrVW1X7jrx/trgxnxkHFjnVZINbzvzxjN70dxychOfg+FTYwBiS3pQ5A==
 
 merge2@^1.3.0:
   version "1.4.1"
@@ -1783,7 +1803,7 @@ react-router@7.5.3:
     set-cookie-parser "^2.6.0"
     turbo-stream "2.4.0"
 
-"react@^16.9.0 || ^17 || ^18 || ^19 || ^19.0.0-rc", "react@^18.0.0 || ^19.0.0", react@^19.0.0, react@^19.1.0, react@>=0.14.0, react@>=16.8.0, react@>=17.0.0, react@>=18:
+"react@^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react@^16.9.0 || ^17 || ^18 || ^19 || ^19.0.0-rc", "react@^18.0.0 || ^19.0.0", react@^19.0.0, react@^19.1.0, react@>=0.14.0, react@>=16.8.0, react@>=17.0.0, react@>=18:
   version "19.1.0"
   resolved "https://registry.npmjs.org/react/-/react-19.1.0.tgz"
   integrity sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg==

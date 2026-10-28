@@ -1,20 +1,21 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { scrollToTarget } from '../lib/motion';
 
 const NAV = [
   { label: 'Clases',   href: '/#clases',   hash: '#clases' },
   { label: 'Maestros', href: '/#maestros', hash: '#maestros' },
   { label: 'Horarios', href: '/#horarios', hash: '#horarios' },
   { label: 'Galería',  href: '/#galeria',  hash: '#galeria' },
+  { label: 'X Wear',   href: '/xwear' },
   { label: 'Registro', href: '/#registro', hash: '#registro' },
 ];
 
 function smoothScrollTo(hash) {
+  if (!hash) return false;
   const el = document.querySelector(hash);
   if (!el) return false;
-  const offset = 72;
-  const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
-  window.scrollTo({ top, behavior: 'smooth' });
+  scrollToTarget(el);
   return true;
 }
 
@@ -42,7 +43,7 @@ export default function Header() {
   function handleLogoClick(e) {
     if (window.location.pathname === '/') {
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollToTarget(0, 0);
     }
   }
 

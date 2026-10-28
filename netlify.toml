@@ -1,0 +1,14 @@
+# Vista previa en Netlify: compilar con Vite y publicar dist (el sitio real sigue en el servidor Apache)
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NETLIFY_USE_YARN = "false"
+  NODE_VERSION = "22"
+
+# Rutas de React (/xwear, /ballet…) sirven index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

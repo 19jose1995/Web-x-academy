@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import LazyVideo from './LazyVideo';
 
 export default function XWearSection() {
   const ref = useRef(null);
@@ -75,23 +76,20 @@ export default function XWearSection() {
               <img src="/whatsapp.png" alt="" className="h-4 w-4 brightness-0 invert" />
               Consultar disponibilidad
             </a>
-            <span
-              className="inline-flex items-center justify-center rounded-full border border-white/15 px-7 py-3.5 text-sm font-semibold text-white/40 cursor-default"
+            <a
+              href="/xwear"
+              className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition hover:border-white/60"
             >
-              Tienda online · Próximamente
-            </span>
+              Ver tienda online
+            </a>
           </motion.div>
         </div>
 
         {/* ── Columna derecha: video ── */}
         <div className="relative overflow-hidden min-h-[340px] md:min-h-0">
-          <video
+          <LazyVideo
             className="absolute inset-0 w-full h-full object-cover opacity-80"
             src="/videos/X%20wear.MOV"
-            autoPlay
-            muted
-            loop
-            playsInline
           />
           {/* Gradiente de fusión hacia la izquierda */}
           <div

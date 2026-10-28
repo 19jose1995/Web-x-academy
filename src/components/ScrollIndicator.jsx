@@ -19,9 +19,9 @@ export default function ScrollIndicator() {
         top: 0,
         left: 0,
         right: 0,
-        height: '6px',
+        height: '3px',
         transformOrigin: '0%',
-        backgroundColor: '#ff0088',
+        background: 'linear-gradient(90deg,#ec1763,#f37826,#cdd629,#5568A9)',
         zIndex: 9999,
       }}
     />

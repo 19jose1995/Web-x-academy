@@ -1,4 +1,5 @@
 import DisciplinaLayout from './DisciplinaLayout';
+import { CONTEMPORANEA } from '../../data/horarios';
 
 const about = (
   <>
@@ -35,15 +36,11 @@ const beneficios = [
   { icon: '🎓', title: 'Formación profesional', desc: 'Base sólida para quienes aspiran a una carrera artística en danza.' },
 ];
 
-const schedules = [
-  { title: 'Danza Contemporánea 1', lines: ['Lun/Mié: 5:30–6:30 PM'] },
-  { title: 'Danza Contemporánea 2', lines: ['Mar/Jue: 5:30–6:30 PM'] },
-  { title: 'Danza Contemporánea 3', lines: ['Sáb: 10:00–11:30 AM'] },
-];
+const schedules = CONTEMPORANEA;
 
 const instructors = [
   {
-    src: '/Cristian.jpg',
+    src: '/Cristian.webp',
     name: 'Cristian Hazin',
     role: 'Danza Contemporánea',
     color: '#cdd629',
@@ -55,7 +52,6 @@ const relatedLinks = [
   { label: 'Ballet',         emoji: '🩰', href: '/ballet',         color: '#ec1763' },
   { label: 'Hip Hop',        emoji: '🎤', href: '/hip-hop',        color: '#f37826' },
   { label: 'Teatro Musical', emoji: '🎭', href: '/teatro-musical', color: '#7c8fd4' },
-  { label: 'Canto',          emoji: '🎵', href: '/canto',          color: '#8fae00' },
 ];
 
 export default function DanzaContemporanea() {

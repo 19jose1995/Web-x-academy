@@ -1,5 +1,6 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import LazyVideo from './LazyVideo';
 
 const VIDEOS = [
   {
@@ -7,36 +8,21 @@ const VIDEOS = [
     title: 'Nuestras Instalaciones',
     desc: 'Conoce los espacios donde el arte cobra vida.',
     src: '/videos/Tour%20academia.mp4',
+    poster: '/DSC_0266.webp',
   },
   {
     id: 2,
     title: 'X Academy en acción',
     desc: 'Momentos reales dentro de nuestras clases.',
     src: '/videos/Explicitus%20festival.MOV',
+    poster: '/DSC_0671.webp',
   },
   {
     id: 3,
     title: 'Talento en escena',
     desc: 'Nuestros estudiantes dando lo mejor de sí.',
     src: '/videos/Teatro%20musical.MOV',
-  },
-  {
-    id: 4,
-    title: 'Arte y movimiento',
-    desc: 'La pasión que nos mueve cada día.',
-    src: '/videos/Tour%20academia.mp4',
-  },
-  {
-    id: 5,
-    title: 'Detrás de escena',
-    desc: 'La magia que ocurre antes de cada presentación.',
-    src: '/videos/Explicitus%20festival.MOV',
-  },
-  {
-    id: 6,
-    title: 'Ensayo en vivo',
-    desc: 'Disciplina y pasión en cada práctica.',
-    src: '/videos/Teatro%20musical.MOV',
+    poster: '/DSC_0705.webp',
   },
 ];
 
@@ -46,15 +32,14 @@ export default function InstalacionesVideo() {
   return (
     <>
       <section
-        className="py-24 px-4 sm:px-8"
+        className="py-24 sm:py-32 px-4 sm:px-8"
         style={{ background: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #1a1a2e 100%)' }}
-        data-aos="fade-up"
       >
         <div className="mx-auto max-w-5xl">
 
           {/* Título estilo Instagram */}
           <div className="text-center mb-10">
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+            <h2 data-fx="split" className="text-5xl sm:text-6xl font-black text-white tracking-tight">
               Nuestras{' '}
               <span className="bg-gradient-to-r from-[#ec1763] via-[#f37826] to-[#cdd629] bg-clip-text text-transparent">
                 Instalaciones
@@ -90,7 +75,7 @@ export default function InstalacionesVideo() {
             </a>
           </div>
 
-          {/* Grid de 6 videos — estilo feed Instagram */}
+          {/* Grid de videos — estilo feed Instagram */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-0.5">
             {VIDEOS.map((v, i) => (
               <FeedCard key={v.id} video={v} index={i} onPlay={() => setActive(v)} />
@@ -105,7 +90,7 @@ export default function InstalacionesVideo() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/20 hover:scale-105"
             >
-              📸 Ver más en Instagram
+              Ver más en Instagram →
             </a>
           </div>
         </div>
@@ -175,7 +160,6 @@ export default function InstalacionesVideo() {
 
 /* ── Tarjeta del feed (video autoreproducido sin audio) ── */
 function FeedCard({ video, index, onPlay }) {
-  const videoRef = useRef(null);
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -190,15 +174,10 @@ function FeedCard({ video, index, onPlay }) {
       onClick={onPlay}
     >
       {/* Video silencioso en loop */}
-      <video
-        ref={videoRef}
+      <LazyVideo
         className="absolute inset-0 w-full h-full object-cover"
         src={video.src}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
+        poster={video.poster}
       />
 
       {/* Overlay en hover */}
