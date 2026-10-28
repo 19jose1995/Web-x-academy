@@ -57,7 +57,7 @@ const maestros = [
     focus: 'center 30%',
     role: 'Teatro Musical · Canto',
     color: '#ec1763',
-    resumen: 'Miguel Peralta es el maestro de canto de Teatro Musical en X Academy. Acompaña a kids, teens y adultos en el desarrollo de su voz y su interpretación en escena.',
+    resumen: 'Miguel Armando Peralta es cantante, músico y educador musical, egresado Summa Cum Laude en Música Contemporánea (Composición, Arreglo y Producción) de la UNPHU. Ha participado en programas como Berklee on the Road: Santo Domingo 2016 y el Taller de Dirección Coral 2026 del Centro Cultural de España en Santo Domingo, y es tenor en el Coro de Santo Domingo. Su experiencia en el teatro musical incluye obras como Peligro, Es Navidad, Mary Poppins Jr., Fantastikos y Espresso El Musical, en las que se ha desempeñado como director vocal, docente de canto, productor, compositor y/o arreglista según la puesta en escena. Su labor se centra en formar y acompañar a intérpretes, ayudándolos a construir una voz expresiva y segura al servicio del escenario.',
   },
 ];
 
@@ -111,7 +111,7 @@ export default function MaestrosDestacados() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.88, y: 30 }}
               transition={{ type: 'spring', stiffness: 300, damping: 28 }}
-              className="relative bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden"
+              className="relative bg-white rounded-3xl shadow-2xl max-w-md w-full max-h-[90svh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Imagen del maestro */}
