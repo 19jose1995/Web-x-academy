@@ -70,15 +70,14 @@ export default function RegistrationForm({ initialSelection }) {
   return (
     <section
       id="registro"
-      className="py-24 px-4 sm:px-8"
+      className="py-24 sm:py-32 px-4 sm:px-8"
       style={{ background: 'linear-gradient(160deg, #eef2ff 0%, #fce7f3 50%, #ecfdf5 100%)' }}
-      data-aos="fade-up"
     >
       <div className="mx-auto max-w-5xl">
 
         {/* Título */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-800 tracking-tight">
+          <h2 data-fx="split" className="text-5xl sm:text-6xl font-black text-slate-900 tracking-tight">
             Formulario de{' '}
             <span style={{ color: '#ec1763' }}>Registro</span>
           </h2>
@@ -91,6 +90,7 @@ export default function RegistrationForm({ initialSelection }) {
 
           {/* ── Panel izquierdo decorativo ── */}
           <div
+            data-fx="up"
             className="md:col-span-2 rounded-3xl p-8 text-white flex flex-col gap-6 min-h-[420px] relative overflow-hidden"
             style={{ background: 'linear-gradient(145deg, #5568A9, #302b63)' }}
           >
@@ -123,7 +123,7 @@ export default function RegistrationForm({ initialSelection }) {
           </div>
 
           {/* ── Formulario ── */}
-          <div className="md:col-span-3 bg-white rounded-3xl shadow-xl p-8">
+          <div data-fx="up" className="md:col-span-3 bg-white rounded-3xl shadow-xl p-8">
             <AnimatePresence mode="wait">
               {sent ? (
                 <motion.div

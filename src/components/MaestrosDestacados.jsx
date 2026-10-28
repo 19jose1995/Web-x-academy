@@ -67,34 +67,26 @@ export default function MaestrosDestacados() {
     <>
       <section
         id="maestros"
-        className="py-24 px-4 sm:px-8"
-        style={{ background: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #1a1a2e 100%)' }}
-        data-aos="fade-up"
+        className="relative overflow-hidden px-4 pb-32 pt-24 sm:px-8 sm:pt-32"
+        style={{ background: 'linear-gradient(160deg, #0f0c29 0%, #302b63 55%, #1a1a2e 100%)' }}
       >
         {/* Título */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Conoce a Nuestros{' '}
+        <div className="mx-auto mb-16 grid max-w-6xl gap-6 md:grid-cols-[1.3fr_1fr] md:items-end">
+          <h2 data-fx="split" className="text-5xl font-black leading-[0.95] tracking-tight text-white sm:text-7xl">
+            Conoce a nuestros{' '}
             <span className="bg-gradient-to-r from-[#ec1763] via-[#f37826] to-[#cdd629] bg-clip-text text-transparent">
-              Maestros
+              maestros
             </span>
           </h2>
-          <p className="mt-3 text-white/40 max-w-md mx-auto text-sm sm:text-base">
-            Artistas y educadores apasionados que guían cada paso de tu formación.
+          <p data-fx="up" className="max-w-sm text-white/55 md:justify-self-end md:text-lg">
+            Artistas y educadores apasionados que guían cada paso de tu formación. Toca una foto para conocer su historia.
           </p>
         </div>
 
-        {/* Fila 1 — 4 maestros */}
-        <div className="mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-          {maestros.slice(0, 4).map((m, i) => (
+        {/* 8 maestros en rejilla escalonada */}
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 md:grid-cols-4">
+          {maestros.map((m, i) => (
             <TeacherCard key={m.name} m={m} i={i} onClick={() => setSelected(m)} />
-          ))}
-        </div>
-
-        {/* Fila 2 — 4 maestros */}
-        <div className="mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-4">
-          {maestros.slice(4).map((m, i) => (
-            <TeacherCard key={m.name} m={m} i={i + 4} onClick={() => setSelected(m)} />
           ))}
         </div>
       </section>
@@ -104,6 +96,7 @@ export default function MaestrosDestacados() {
         {selected && (
           <motion.div
             key="modal-bg"
+            data-lenis-prevent
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -161,55 +154,42 @@ export default function MaestrosDestacados() {
 
 function TeacherCard({ m, i, onClick }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
-      onClick={onClick}
-      className="group relative overflow-hidden rounded-2xl cursor-pointer aspect-[3/4]"
-      style={{ boxShadow: `0 0 0 0px ${m.color}` }}
-      whileHover={{ scale: 1.03 }}
-    >
-      <img
-        src={m.src}
-        alt={m.name}
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-      />
-
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-      {/* Color accent bar */}
-      <div
-        className="absolute top-0 left-0 right-0 h-1 transition-all duration-300 group-hover:h-1.5"
-        style={{ background: m.color }}
-      />
-
-      {/* Info */}
-      <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+    <div className={i % 2 ? 'translate-y-8 md:translate-y-14' : ''}>
+      <button
+        type="button"
+        onClick={onClick}
+        data-fx="clip"
+        data-delay={(i % 4) * 0.08}
+        data-cursor="Ver bio"
+        className="group relative block aspect-[3/4] w-full overflow-hidden rounded-2xl text-left"
+      >
+        <img
+          src={m.src}
+          alt={m.name}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 via-35% to-transparent" />
         <div
-          className="text-xs font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          style={{ color: m.color }}
-        >
-          {m.role}
-        </div>
-        <h3 className="text-white font-bold text-sm sm:text-base leading-tight">{m.name}</h3>
-        <div className="mt-2 text-white/60 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1">
-          <span>Ver bio</span>
-          <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </div>
-      </div>
+          className="absolute inset-0 opacity-0 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-60"
+          style={{ background: m.color }}
+        />
 
-      {/* Ring on hover */}
-      <div
-        className="absolute inset-0 rounded-2xl ring-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{ '--tw-ring-color': m.color, ringColor: m.color, boxShadow: `inset 0 0 0 2px ${m.color}` }}
-      />
-    </motion.div>
+        <div className="absolute inset-x-0 bottom-0 p-4 pr-14">
+          <div className="mb-1 flex items-start gap-1.5 text-[10px] font-bold uppercase leading-tight tracking-[0.12em] text-white/75 sm:text-[11px]">
+            <span className="mt-[3px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: m.color }} />
+            {m.role}
+          </div>
+          <h3 className="text-sm font-bold leading-tight text-white sm:text-lg">{m.name}</h3>
+          <span
+            className="absolute right-4 bottom-4 flex h-8 w-8 items-center justify-center rounded-full text-sm font-black text-white transition-transform duration-500 group-hover:rotate-90"
+            style={{ background: m.color }}
+          >
+            +
+          </span>
+        </div>
+      </button>
+    </div>
   );
 }

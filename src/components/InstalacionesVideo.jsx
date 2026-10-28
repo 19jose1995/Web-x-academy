@@ -32,15 +32,14 @@ export default function InstalacionesVideo() {
   return (
     <>
       <section
-        className="py-24 px-4 sm:px-8"
+        className="py-24 sm:py-32 px-4 sm:px-8"
         style={{ background: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #1a1a2e 100%)' }}
-        data-aos="fade-up"
       >
         <div className="mx-auto max-w-5xl">
 
           {/* Título estilo Instagram */}
           <div className="text-center mb-10">
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+            <h2 data-fx="split" className="text-5xl sm:text-6xl font-black text-white tracking-tight">
               Nuestras{' '}
               <span className="bg-gradient-to-r from-[#ec1763] via-[#f37826] to-[#cdd629] bg-clip-text text-transparent">
                 Instalaciones

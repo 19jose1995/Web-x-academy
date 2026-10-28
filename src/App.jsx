@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import { startSmoothScroll, stopSmoothScroll } from './lib/motion';
+import Cursor from './components/Cursor';
 const Ballet = lazy(() => import('./pages/disciplines/Ballet'));
 const HipHop = lazy(() => import('./pages/disciplines/HipHop'));
 const DanzaContemporanea = lazy(() => import('./pages/disciplines/DanzaContemporanea'));
@@ -20,6 +21,8 @@ export default function App() {
   }, []);
 
   return (
+    <>
+    <Cursor />
     <Suspense fallback={<div className="min-h-screen bg-[#1a1a2e]" />}>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -35,5 +38,6 @@ export default function App() {
         <Route path="/blog/beneficios-de-la-danza-para-ninos" element={<BeneficiosDanzaNinos />} />
       </Routes>
     </Suspense>
+    </>
   );
 }

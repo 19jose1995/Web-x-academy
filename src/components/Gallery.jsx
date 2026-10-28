@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 
 const PREVIEW = [
   '/DSC_0040.webp',
@@ -11,15 +10,15 @@ const PREVIEW = [
 
 export default function Gallery() {
   return (
-    <section id="galeria" className="py-20 px-6 bg-white">
+    <section id="galeria" className="py-24 sm:py-32 px-6 bg-white">
       <div className="mx-auto max-w-6xl">
 
-        <div className="flex items-end justify-between mb-8" data-aos="fade-up">
+        <div className="flex items-end justify-between mb-8">
           <div>
-            <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: '#ec1763' }}>
+            <p data-fx="up" className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: '#ec1763' }}>
               Galería
             </p>
-            <h2 className="text-4xl sm:text-5xl font-black text-slate-800 leading-tight">
+            <h2 data-fx="split" className="text-5xl sm:text-7xl font-black text-slate-900 leading-[0.95] tracking-tight">
               Últimos eventos
             </h2>
           </div>
@@ -31,7 +30,7 @@ export default function Gallery() {
           </Link>
         </div>
 
-        <div className="mb-6" data-aos="fade-up" data-aos-delay="50">
+        <div className="mb-6" data-fx="up">
           <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-1.5 text-xs font-semibold text-slate-500">
             La Vida es un Musical · 2026
           </span>
@@ -39,15 +38,15 @@ export default function Gallery() {
 
         {/* Grid: primera foto alta (row-span-2) + 3 normales + 1 con overlay CTA */}
         <div
-          data-aos="fade-up"
-          data-aos-delay="100"
-          className="grid grid-cols-2 sm:grid-cols-3 gap-2"
-          style={{ gridTemplateRows: '220px 220px' }}
+          className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 [grid-template-rows:200px_200px] sm:[grid-template-rows:280px_280px]"
         >
           {PREVIEW.map((src, i) => (
             <Link
               key={src}
               to="/galeria"
+              data-fx="clip"
+              data-delay={i * 0.08}
+              data-cursor="Ver"
               className={[
                 'relative overflow-hidden rounded-2xl group block',
                 i === 0 ? 'row-span-2' : '',

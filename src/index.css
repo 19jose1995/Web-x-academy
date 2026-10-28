@@ -53,3 +53,6 @@ html.lenis, html.lenis body { height: auto; }
   html { scroll-behavior: auto; }
   .hx-cue { animation: none; }
 }
+
+/* Cursor propio (solo con mouse) */
+html.has-cursor, html.has-cursor a, html.has-cursor button, html.has-cursor [data-cursor] { cursor: none; }
