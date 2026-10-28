@@ -52,11 +52,12 @@ const maestros = [
     resumen: 'Alba Isaura es una joven bailarina dominicana, graduada en 2024 del Bachillerato Técnico en Artes, mención Danza. Actualmente forma parte de la compañía de danza contemporánea Explicitus. Se especializa en danza clásica y contemporánea, y también se desempeña como docente.',
   },
   {
-    src: '/Paola.webp',
-    name: 'Paola Prado',
+    src: '/Miguel.webp',
+    name: 'Miguel Peralta',
+    focus: 'center 30%',
     role: 'Teatro Musical · Canto',
     color: '#ec1763',
-    resumen: 'Paola Prado es cantante, vocal coach, maquilladora, directora coral y docente especializada en teatro musical. Estudia Licenciatura en Música Contemporánea en la UNPHU. Es fundadora del Estudio Musical Paola Prado y profesora de canto e interpretación en la Academia Amaury Sánchez desde 2018.',
+    resumen: 'Miguel Peralta es el maestro de canto de Teatro Musical en X Academy. Acompaña a kids, teens y adultos en el desarrollo de su voz y su interpretación en escena.',
   },
 ];
 
@@ -118,7 +119,8 @@ export default function MaestrosDestacados() {
                 <img
                   src={selected.src}
                   alt={selected.name}
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: selected.focus || 'top' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <div className="absolute bottom-4 left-5">
