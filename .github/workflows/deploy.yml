@@ -4,7 +4,7 @@ name: Publicar en Hostinger
 
 on:
   push:
-    branches: [main, despliegue-hostinger]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
