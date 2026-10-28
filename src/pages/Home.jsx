@@ -344,8 +344,8 @@ export default function Home() {
           <div data-fx="up" className="relative overflow-hidden rounded-3xl shadow-2xl flex flex-col bg-black min-h-[420px]">
             <LazyVideo
               className="absolute inset-0 w-full h-full object-cover opacity-70"
-              src="/videos/Tour%20academia.mp4"
-              poster="/DSC_0266.webp"
+              src="/videos/IMG_4884.mp4"
+              poster="/DSC_0087.webp"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
