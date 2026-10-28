@@ -1,6 +1,7 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import { startSmoothScroll, stopSmoothScroll } from './lib/motion';
 const Ballet = lazy(() => import('./pages/disciplines/Ballet'));
 const HipHop = lazy(() => import('./pages/disciplines/HipHop'));
 const DanzaContemporanea = lazy(() => import('./pages/disciplines/DanzaContemporanea'));
@@ -13,6 +14,11 @@ const Galeria = lazy(() => import('./pages/Galeria'));
 const XWear = lazy(() => import('./pages/XWear'));
 
 export default function App() {
+  useEffect(() => {
+    startSmoothScroll();
+    return stopSmoothScroll;
+  }, []);
+
   return (
     <Suspense fallback={<div className="min-h-screen bg-[#1a1a2e]" />}>
       <Routes>

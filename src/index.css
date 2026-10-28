@@ -36,3 +36,20 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #ec1763;
 }
+
+/* Indicador de scroll del hero */
+@keyframes hx-cue {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+.hx-cue { animation: hx-cue 1.8s cubic-bezier(.65,0,.35,1) infinite; }
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hx-cue { animation: none; }
+}

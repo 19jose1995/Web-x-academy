@@ -16,6 +16,7 @@ import InstalacionesVideo from "../components/InstalacionesVideo";
 import ScrollIndicator from "../components/ScrollIndicator";
 import { useSEO } from "../hooks/useSEO";
 import LazyVideo from "../components/LazyVideo";
+import HeroX from "../components/HeroX";
 
 /* ─── DATOS ─────────────────────────────────────────────────────── */
 
@@ -178,7 +179,6 @@ function ClasesIcon({ type }) {
   );
 }
 
-const fadeUp = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0 } };
 
 /* ─── HOME ──────────────────────────────────────────────────────── */
 export default function Home() {
@@ -199,76 +199,7 @@ export default function Home() {
       <ScrollIndicator />
       <Header />
 
-      {/* ══ HERO ══════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-24 overflow-hidden">
-        <video
-          className="absolute inset-0 h-full w-full object-cover"
-          autoPlay muted loop playsInline preload="metadata"
-          poster="/DSC_0087.webp"
-        >
-          <source src="/videos/IMG_4884.MOV" type="video/mp4" />
-        </video>
-
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0"
-          style={{ background: "linear-gradient(135deg, rgba(236,23,99,0.18) 0%, rgba(0,0,0,0) 50%, rgba(85,104,169,0.20) 100%)" }} />
-        <div className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.45) 100%)" }} />
-
-        <motion.img
-          src="/logo.png"
-          alt="X Academy Performing Arts"
-          className="relative h-44 sm:h-60 mb-8 object-contain drop-shadow-2xl brightness-0 invert"
-          initial={{ opacity: 0, scale: 0.8, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        />
-
-        <motion.h1
-          variants={fadeUp} initial="hidden" animate="show"
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative text-5xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.05] text-white"
-        >
-          Descubre tu talento
-          <br />
-          <span style={{ background: "linear-gradient(90deg,#ec1763,#f37826,#cdd629)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-            en X Academy
-          </span>
-        </motion.h1>
-
-        <motion.p
-          variants={fadeUp} initial="hidden" animate="show"
-          transition={{ duration: 0.7, delay: 0.35 }}
-          className="relative mt-5 max-w-xl text-lg text-white/75"
-        >
-          Una academia de artes escénicas en <strong className="text-white">Arroyo Hondo, Santo Domingo</strong> donde el canto,
-          el teatro y la danza se convierten en experiencias que transforman vidas.
-        </motion.p>
-
-        <motion.div
-          variants={fadeUp} initial="hidden" animate="show"
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="relative mt-8 flex flex-col sm:flex-row items-center gap-3"
-        >
-          <a href="#registro"
-            className="rounded-full bg-[#f37826] px-8 py-3.5 font-bold text-white shadow-xl shadow-orange-500/30 transition hover:scale-105 hover:bg-orange-500 text-base">
-            Inscríbete Ahora
-          </a>
-          <a href="#horarios"
-            className="rounded-full border-2 border-white/30 bg-white/10 px-8 py-3.5 font-bold text-white backdrop-blur-md transition hover:scale-105 hover:bg-white/20 text-base">
-            Ver clases
-          </a>
-        </motion.div>
-
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50"
-          animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 1.8 }}
-        >
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </motion.div>
-      </section>
+      <HeroX />
 
       {/* ══ STATS ════════════════════════════════════════════════ */}
       <section style={{ background: "linear-gradient(135deg,#1a1a2e,#302b63)" }} className="py-16 px-6">
