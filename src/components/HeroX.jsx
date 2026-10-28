@@ -109,7 +109,7 @@ export default function HeroX() {
       const zoom = { t: 0 };
       const ratio = L.sEnd / L.s0;
       const tl = gsap.timeline({
-        scrollTrigger: { trigger: root.current, start: "top top", end: "bottom bottom", scrub: 0.6 },
+        scrollTrigger: { trigger: root.current, start: "top top", end: "bottom bottom", scrub: 0.2 },
       });
       tl.to(zoom, {
         t: 1, duration: 1, ease: "power2.in",
