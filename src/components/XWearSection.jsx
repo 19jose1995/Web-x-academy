@@ -89,7 +89,7 @@ export default function XWearSection() {
         <div className="relative overflow-hidden min-h-[340px] md:min-h-0">
           <LazyVideo
             className="absolute inset-0 w-full h-full object-cover opacity-80"
-            src="/videos/X%20wear.MOV"
+            src="/videos/X%20wear.mp4"
           />
           {/* Gradiente de fusión hacia la izquierda */}
           <div
