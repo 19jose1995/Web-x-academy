@@ -20,7 +20,7 @@ const ECHOES = [
 
 const WORDS = [
   { text: "Danza", color: "#ec1763" },
-  { text: "Canto", color: "#cdd629" },
+  { text: "Hip Hop", color: "#cdd629" },
   { text: "Teatro", color: "#f37826" },
   { text: "Musical", color: "#7c8fd4" },
 ];
@@ -102,7 +102,7 @@ export default function HeroX() {
         .from(q("[data-char]"), { yPercent: 115, rotate: 8, duration: 0.9, stagger: 0.025 }, 0.6)
         .from(q("[data-line2]"), { clipPath: "inset(0 100% 0 0)", duration: 1, ease: "power3.inOut" }, 1.0)
         .from(q("[data-sub], [data-cta]"), { y: 24, opacity: 0, duration: 0.8, stagger: 0.1 }, 1.25)
-        .from(q("[data-cue]"), { opacity: 0, duration: 0.6 }, 1.8);
+        .from(q("[data-cue] > *"), { opacity: 0, duration: 0.6 }, 1.8);
 
       /* Scroll: entramos por la X hasta llenar la pantalla con el video */
       const xGroups = q("[data-x]");
@@ -221,7 +221,7 @@ export default function HeroX() {
               </span>
             </h1>
             <p data-sub className={`mt-5 text-white/75 ${L.mobile ? "text-[15px]" : "text-lg max-w-md"}`}>
-              Danza, canto y teatro musical para niños, teens y adultos. Aquí el arte se vive en escena.
+              Ballet, hip hop, jazz, contemporáneo y teatro musical para niños, teens y adultos. Aquí el arte se vive en escena.
             </p>
             <div data-cta className={`mt-8 flex gap-3 ${L.mobile ? "justify-center" : ""}`}>
               <a href="#registro" onClick={(e) => { e.preventDefault(); scrollToTarget("#registro"); }}

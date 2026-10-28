@@ -50,7 +50,6 @@ const relatedLinks = [
   { label: 'Ballet',          emoji: '🩰', href: '/ballet',              color: '#ec1763' },
   { label: 'Hip Hop',         emoji: '🎤', href: '/hip-hop',             color: '#f37826' },
   { label: 'Contemporánea',   emoji: '💫', href: '/danza-contemporanea', color: '#5568A9' },
-  { label: 'Canto',           emoji: '🎵', href: '/canto',               color: '#8fae00' },
 ];
 
 export default function TeatroMusical() {

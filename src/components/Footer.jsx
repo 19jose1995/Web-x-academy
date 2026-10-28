@@ -7,7 +7,7 @@ export default function Footer() {
         <div>
           <img src="/logo.png" alt="X Academy" className="h-16 object-contain mb-4 brightness-0 invert" />
           <p className="text-sm text-white/50 leading-relaxed">
-            Academia de artes escénicas en Santo Domingo, República Dominicana. Danza, canto y teatro para todas las edades.
+            Academia de artes escénicas en Santo Domingo, República Dominicana. Danza y teatro musical para todas las edades.
           </p>
         </div>
 
@@ -25,7 +25,6 @@ export default function Footer() {
               ['Hip Hop', '/hip-hop'],
               ['Danza Contemporánea', '/danza-contemporanea'],
               ['Teatro Musical', '/teatro-musical'],
-              ['Canto', '/canto'],
             ].map(([label, href]) => (
               <li key={label}><a href={href} className="hover:text-white transition">{label}</a></li>
             ))}

@@ -50,7 +50,6 @@ const relatedLinks = [
   { label: 'Ballet',          emoji: '🩰', href: '/ballet',              color: '#ec1763' },
   { label: 'Contemporánea',   emoji: '💫', href: '/danza-contemporanea', color: '#5568A9' },
   { label: 'Teatro Musical',  emoji: '🎭', href: '/teatro-musical',      color: '#7c8fd4' },
-  { label: 'Canto',           emoji: '🎵', href: '/canto',               color: '#8fae00' },
 ];
 
 export default function HipHop() {

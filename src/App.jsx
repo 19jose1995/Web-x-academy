@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import { startSmoothScroll, stopSmoothScroll } from './lib/motion';
 import Cursor from './components/Cursor';
@@ -7,7 +7,6 @@ const Ballet = lazy(() => import('./pages/disciplines/Ballet'));
 const HipHop = lazy(() => import('./pages/disciplines/HipHop'));
 const DanzaContemporanea = lazy(() => import('./pages/disciplines/DanzaContemporanea'));
 const TeatroMusical = lazy(() => import('./pages/disciplines/TeatroMusical'));
-const Canto = lazy(() => import('./pages/disciplines/Canto'));
 const ComoElegirPrimeraClaseBallet = lazy(() => import('./pages/blog/ComoElegirPrimeraClaseBallet'));
 const BeneficiosDanzaNinos = lazy(() => import('./pages/blog/BeneficiosDanzaNinos'));
 const BlogIndex = lazy(() => import('./pages/blog/BlogIndex'));
@@ -32,7 +31,7 @@ export default function App() {
         <Route path="/hip-hop" element={<HipHop />} />
         <Route path="/danza-contemporanea" element={<DanzaContemporanea />} />
         <Route path="/teatro-musical" element={<TeatroMusical />} />
-        <Route path="/canto" element={<Canto />} />
+        <Route path="/canto" element={<Navigate to="/teatro-musical" replace />} />
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/como-elegir-primera-clase-ballet" element={<ComoElegirPrimeraClaseBallet />} />
         <Route path="/blog/beneficios-de-la-danza-para-ninos" element={<BeneficiosDanzaNinos />} />

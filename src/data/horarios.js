@@ -36,12 +36,6 @@ export const TEATRO_MUSICAL = [
   { title: "Teatro Musical Adultos", lines: ["Lun: 6:00–7:00 PM danza · 7:00–8:00 PM canto", "Vie: 6:15–7:30 PM teatro"] },
 ];
 
-// El canto se da dentro de Teatro Musical
-export const CANTO = [
-  { title: "Canto · Teatro Musical Kids", lines: ["Miércoles: 4:30–5:30 PM"] },
-  { title: "Canto · Teatro Musical Teens", lines: ["Miércoles: 6:00–7:00 PM"] },
-  { title: "Canto · Teatro Musical Adultos", lines: ["Lunes: 7:00–8:00 PM"] },
-];
 
 export const GRUPOS = [
   { id: "ballet", label: "Ballet", color: "#ec1763", clases: BALLET },

@@ -87,7 +87,7 @@ export default function RegistrationForm({ initialSelection }) {
             <ul className="space-y-3 text-sm text-white/80">
               {[
                 'Maestros certificados y con experiencia escénica',
-                'Danza, canto y teatro para todas las edades',
+                'Danza y teatro musical para todas las edades',
                 'Horarios flexibles entre semana y fines de semana',
                 'Presentaciones y eventos durante el año',
               ].map((item) => (

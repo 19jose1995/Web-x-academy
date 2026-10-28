@@ -31,25 +31,25 @@ const STATS = [
 const CLASES = [
   {
     title: "Danza",
-    desc: "Ballet, contemporáneo, hip hop, heels y jazz. Desde los 3 años hasta adultos.",
+    desc: "Ballet, contemporáneo y jazz. Desde el Baby Ballet a los 3 años hasta adultos.",
     type: "danza",
     from: "#ec1763",
     to: "#ff6b9d",
     href: "#horarios",
     tag: "danza",
     img: "/DSC_0515.webp",
-    meta: "Ballet · Hip Hop · Contemporáneo · Heels · Jazz",
+    meta: "Baby Ballet · Pre-Ballet · Ballet · Contemporáneo · Jazz",
   },
   {
-    title: "Canto",
-    desc: "Desarrolla tu voz con técnicas vocales profesionales y expresión escénica.",
-    type: "canto",
-    from: "#8fae00",
+    title: "Hip Hop & Heels",
+    desc: "Ritmo, actitud y estilo urbano. Hip hop desde los 6 años y heels para mayores de 16.",
+    type: "urbano",
+    from: "#f37826",
     to: "#cdd629",
     href: "#horarios",
-    tag: "canto",
-    img: "/Paola.webp",
-    meta: "Dentro de Teatro Musical · Kids · Teens · Adultos",
+    tag: "urbano",
+    img: "/DSC_0326.webp",
+    meta: "Kids · Teens · Adultos",
   },
   {
     title: "Teatro Musical",
@@ -69,7 +69,6 @@ const DISCIPLINAS = [
   { label: "Hip Hop",            emoji: "🎤", href: "/hip-hop",             color: "#f37826" },
   { label: "Contemporánea",      emoji: "💫", href: "/danza-contemporanea", color: "#5568A9" },
   { label: "Teatro Musical",     emoji: "🎭", href: "/teatro-musical",      color: "#7c8fd4" },
-  { label: "Canto",              emoji: "🎵", href: "/canto",               color: "#8fae00" },
 ];
 
 function GrupoAcordeon({ grupo }) {
@@ -169,7 +168,7 @@ function TiltCard({ c, i }) {
 function ClasesIcon({ type }) {
   const map = {
     danza:  <Music2  size={22} strokeWidth={1.75} />,
-    canto:  <Mic2    size={22} strokeWidth={1.75} />,
+    urbano: <Mic2    size={22} strokeWidth={1.75} />,
     teatro: <Theater size={22} strokeWidth={1.75} />,
   };
   return map[type];
@@ -179,7 +178,7 @@ function ClasesIcon({ type }) {
 export default function Home() {
   useSEO({
     title: "X Academy | Academia de Artes Escénicas en Santo Domingo",
-    description: "X Academy es una academia de artes escénicas en Arroyo Hondo, Santo Domingo. Clases de ballet, hip hop, danza contemporánea, teatro musical y canto para todas las edades.",
+    description: "X Academy es una academia de artes escénicas en Arroyo Hondo, Santo Domingo. Clases de ballet, hip hop, danza contemporánea, jazz y teatro musical para todas las edades.",
   });
 
   const root = useRef(null);

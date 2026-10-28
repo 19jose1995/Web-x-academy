@@ -54,7 +54,7 @@ const maestros = [
   {
     src: '/Paola.webp',
     name: 'Paola Prado',
-    role: 'Canto',
+    role: 'Teatro Musical · Canto',
     color: '#ec1763',
     resumen: 'Paola Prado es cantante, vocal coach, maquilladora, directora coral y docente especializada en teatro musical. Estudia Licenciatura en Música Contemporánea en la UNPHU. Es fundadora del Estudio Musical Paola Prado y profesora de canto e interpretación en la Academia Amaury Sánchez desde 2018.',
   },
